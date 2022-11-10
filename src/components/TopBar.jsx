@@ -1,3 +1,6 @@
+import "./TopBar.css"
+
+
 function TopBar() {
     return (
     <div class="w-full h-28 flex font-bluetea text-white bg-web-topBar justify-between items-center">

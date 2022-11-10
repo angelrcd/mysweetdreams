@@ -1,6 +1,6 @@
-import "./login.css";
-import "./topBar.jsx";
-import ContentLogin from "./contentLogin.jsx";
+import "./Login.css";
+import TopBar from "./TopBar.jsx";
+import ContentLogin from "./ContentLogin.jsx";
 
 function Login() {
     return (
@@ -11,5 +11,5 @@ function Login() {
     );
 }
 
-
+export default Login;
 
