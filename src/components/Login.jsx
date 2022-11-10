@@ -4,7 +4,7 @@ import ContentLogin from "./ContentLogin.jsx";
 
 function Login() {
     return (
-    <div class="w-full flex flex-col">
+    <div className="w-full flex flex-col">
         <TopBar />
         <ContentLogin />
     </div>
