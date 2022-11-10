@@ -3,16 +3,16 @@ import './Signup.css'
 function Signup () {
   return (
     <main className="w-screen h-screen text-xl">
-          <nav className="w-full h-1/6 font-bluetea bg-web-custom1 flex justify-between items-center px-16">
+          <nav className="w-full h-1/6 font-caveat text-3xl bg-web-custom1 flex justify-between items-center px-16">
             <a className="text-web-custom3 hover:text-purple-500" href="#">SWEETDREAMS</a>
             <div className="h-full w-96 flex justify-around items-center">
-                <a className="text-web-custom3 hover:text-purple-500" href="#">¿Quienes somos?</a>
+                <a className="text-web-custom3 hover:text-purple-500" href="#">¿Quiénes somos?</a>
                 <a className="text-web-custom3 hover:text-purple-500" href="#">Sign in</a>
                 <a className="text-web-custom3 hover:text-purple-500" href="#">Sign up</a>
             </div>
         </nav>
         <header className="w-full h-5/6 flex justify-center items-center py-24 bg-[url('./img/background-night.jpg')] bg-cover bg-no-repeat bg-top">
-            <div className="w-1/3 h-full flex flex-col justify-center items-center rounded-3xl bg-gray-300/75">
+            <div className="w-1/3 h-full font-quicksand flex flex-col justify-center items-center rounded-3xl bg-gray-300/75">
 
                 <div className="flex flex-col items-center my-3 gap-1">
                     <label className="text-black" htmlFor="email">Email</label>

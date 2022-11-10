@@ -20,7 +20,9 @@ module.exports = {
       },
 
       fontFamily: {
-        bluetea: 'bluetea'
+        bluetea: 'bluetea',
+        quicksand: 'Quicksand',
+        caveat: 'Caveat'
       }
     }
   },
