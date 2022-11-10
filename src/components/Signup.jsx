@@ -12,7 +12,7 @@ function Signup () {
             </div>
         </nav>
         <header className="w-full h-5/6 flex justify-center items-center py-24 bg-[url('./img/background-night.jpg')] bg-cover bg-no-repeat bg-top">
-            <div className="w-1/3 h-full font-quicksand flex flex-col justify-center items-center rounded-3xl bg-gray-300/75">
+              <div className="shadow-md shadow-web-custom1 w-1/3 h-full font-quicksand flex flex-col justify-center items-center rounded-3xl bg-web-custom2/75"/* bg-gray-300/75 */>
 
                 <div className="flex flex-col items-center my-3 gap-1">
                     <label className="text-black" htmlFor="email">Email</label>
@@ -29,7 +29,7 @@ function Signup () {
                     <input className="bg-gray-400 rounded-lg w-80 px-2 focus:bg-gray-300 transition-colors duration-500 placeholder-gray-500 text-center" id="repeat-passwd" placeholder="Repeat your password" type="password" />
                 </div>
 
-                <button className="text-black border-none bg-green-300 hover:bg-green-500 transition-colors duration-700 py-4 px-9 rounded-3xl" type="submit">Submit</button>
+                <button className="text-black border-none bg-web-custom4 hover:bg-green-500 transition-colors duration-700 py-4 px-9 rounded-3xl" type="submit">Submit</button>
             </div>
         </header>
     </main>
