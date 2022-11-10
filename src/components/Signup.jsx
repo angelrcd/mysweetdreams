@@ -5,10 +5,10 @@ function Signup () {
     <main className="w-screen h-screen text-xl">
           <nav className="w-full h-1/6 font-caveat text-3xl bg-web-custom1 flex justify-between items-center px-16">
             <a className="text-web-custom3 hover:text-purple-500" href="#">SWEETDREAMS</a>
-            <div className="h-full w-96 flex justify-around items-center">
+            <div className="h-full w-[36rem] flex justify-around items-center">
                 <a className="text-web-custom3 hover:text-purple-500" href="#">¿Quiénes somos?</a>
-                <a className="text-web-custom3 hover:text-purple-500" href="#">Sign in</a>
-                <a className="text-web-custom3 hover:text-purple-500" href="#">Sign up</a>
+                <a className="text-web-custom3 hover:text-purple-500" href="#">Iniciar Sesión</a>
+                <a className="text-web-custom3 hover:text-purple-500" href="#">Registrarse</a>
             </div>
         </nav>
         <header className="w-full h-5/6 flex justify-center items-center py-24 bg-[url('./img/background-night.jpg')] bg-cover bg-no-repeat bg-top">
@@ -20,12 +20,12 @@ function Signup () {
                 </div>
 
                 <div className="flex flex-col items-center my-3 gap-1">
-                    <label className="text-black" htmlFor="passwd">Password</label>
+                    <label className="text-black" htmlFor="passwd">Contraseña</label>
                     <input className="bg-gray-400 rounded-lg w-80 px-2 focus:bg-gray-300 transition-colors duration-500 placeholder-gray-500 text-center" id="passwd" placeholder="Enter your password" type="password" />
                 </div>
 
                 <div className="flex flex-col items-center mt-3 mb-10 gap-1">
-                    <label className="text-black" htmlFor="repeat-passwd">Repeat Password</label>
+                    <label className="text-black" htmlFor="repeat-passwd">Repetir Contraseña</label>
                     <input className="bg-gray-400 rounded-lg w-80 px-2 focus:bg-gray-300 transition-colors duration-500 placeholder-gray-500 text-center" id="repeat-passwd" placeholder="Repeat your password" type="password" />
                 </div>
 
