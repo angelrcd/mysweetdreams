@@ -3,7 +3,7 @@ import ButtonComenzar from './ButtonComenzar.jsx'
 
 function Description () {
   return (
-    <div id="Description">
+    <div className= "font-bluetea" id="Description">
     <div id="info" className="h-auto bg-web-fondo flex flex-col justify-center">
   <div className="px-56">
     <h3 className="border-b-4 border-black py-16 px-44 text-3xl text-center">Una experiencia personalizada para que duermas
@@ -32,7 +32,7 @@ function Description () {
       <p className="text-center text-gray-600">Tus datos estan protegidos frente a terceros</p>
     </div>
   </div>
-  <ButtonComenzar />
+  <div className='flex justify-center'><ButtonComenzar /> </div>
 </div>
     </div>
   )
