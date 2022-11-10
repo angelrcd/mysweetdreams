@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Bluetea Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Bluetea Regular"), url("/fonts/Bluetea-2ORDv.woff") format("woff");
+}
+
+@layer components {
+  .boton-web {
+    @apply font-sans w-1/4 h-28 text-3xl bg-web-boton rounded-full;
+  }
+}
