@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "bluetea";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/Bluetea.ttf");
+}

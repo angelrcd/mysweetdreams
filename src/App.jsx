@@ -1,10 +1,9 @@
 import './App.css'
-import Login from './components/Login.jsx'
+import MainPage from './components/MainPage.jsx'
 
 function App () {
-
   return (
-    <Login />
+    <MainPage />
   )
 }
 
