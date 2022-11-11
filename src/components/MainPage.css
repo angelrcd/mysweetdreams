@@ -19,14 +19,14 @@
   src: url('../fonts/Caveat.ttf');
 }
 
-h1 {
-  text-shadow: -1px 1px 0 #000,
+.text-shadow-2 {
+  text-shadow: -2px 2px 0 #000,
   2px 2px 0 #000,
  2px -2px 0 #000,
 -2px -2px 0 #000;
 }
 
-.subtitulo {
+.text-shadow-1 {
   text-shadow: -1px 1px 0 #000,
   1px 1px 0 #000,
  1px -1px 0 #000,
