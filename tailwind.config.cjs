@@ -16,7 +16,9 @@ module.exports = {
       },
 
       fontFamily: {
-        bluetea: ['bluetea', 'cursive']
+        bluetea: ['bluetea', 'cursive'],
+        caveat: ['caveat', 'cursive'],
+        quicksand: ['quicksand', 'cursive']
       }
     }
   },
