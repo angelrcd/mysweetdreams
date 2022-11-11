@@ -10,8 +10,8 @@ function Signup () {
                 <a className="text-web-custom3 hover:text-purple-500" href="#">Iniciar Sesión</a>
                 <a className="text-web-custom3 hover:text-purple-500" href="#">Registrarse</a>
             </div>
-        </nav>
-        <header className="w-full h-5/6 flex justify-center items-center py-24 bg-[url('./img/background-night.jpg')] bg-cover bg-no-repeat bg-top">
+          </nav>
+          <header className=" overflow-hidden relative w-full h-5/6 flex justify-center items-center py-24 bg-[url('./img/background-night.jpg')] bg-cover bg-no-repeat bg-top">
         <div className="shadow-md shadow-web-custom1 w-1/3 h-full font-quicksand flex flex-col justify-center items-center rounded-3xl  bg-gray-300/75"/* bg-web-custom2/75 */>
 
                 <div className="flex flex-col items-center my-3 gap-1">
@@ -30,7 +30,7 @@ function Signup () {
                 </div>
 
                 <button className="text-black border-none bg-web-custom4 hover:bg-green-500 transition-colors duration-700 py-4 px-9 rounded-3xl" type="submit">Submit</button>
-            </div>
+        </div>
         </header>
     </main>
   )
