@@ -9,11 +9,11 @@ function LandingImage () {
           <img className='h-[150px]' src="/img/logo.png" alt="logo" />
           <h1 className="text-shadow-2 text-white font-bluetea text-6xl">SWEETDREAMS</h1>
         </div>
-        <nav className='justify-self-end items-center items-center justify-center'>
-          <ul className='flex gap-5 text-2xl font-quicksand text-white text-shadow-1a items-center'>
-            <li><a href="">Iniciar sesión</a></li>
-            <li><a href="">Registrarse</a></li>
-            <li><a href="">Quienes somos</a></li>
+        <nav className='justify-self-end items-center flex justify-center'>
+          <ul className='flex gap-5 text-2xl font-quicksand text-white text-shadow-1a items-center font-semibold text-shadow-1'>
+            <li className='hover:text-web-boton duration-300 ease-in-out'><a href="">Iniciar sesión</a></li>
+            <li className='hover:text-web-boton duration-300 ease-in-out'><a href="">Registrarse</a></li>
+            <li className='hover:text-web-boton duration-300 ease-in-out'><a href="">Quienes somos</a></li>
           </ul>
         </nav>
       </div>
