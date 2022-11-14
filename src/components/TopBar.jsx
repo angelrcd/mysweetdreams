@@ -1,7 +1,7 @@
 import './TopBar.css'
 
-function TopBar() {
-    return (
+function TopBar () {
+  return (
         <div className="w-full h-28 flex font-bluetea text-white bg-web-topBar justify-between items-center">
             <div className="pl-14">
                 <a href="../index.html" className="text-5xl">SWEETDREAMS</a>
@@ -12,7 +12,7 @@ function TopBar() {
                 <a href="" className="text-5xl mx-10">Sign up</a>
             </div>
         </div>
-    );
+  )
 }
 
-export default TopBar;
+export default TopBar
