@@ -24,7 +24,7 @@ function LandingImage () {
         </p>
       </div>
       <div className='px-28 mb-20'>
-        <Button text="COMENZAR YA" link=""/>
+        <Button text="COMENZAR YA" to=""/>
       </div>
     </head>
   )

@@ -3,8 +3,8 @@ import Button from './Button.jsx'
 
 function Description () {
   return (
-    <div className= "font-quicksand" id="Description">
-      <div id="info" className="h-auto bg-web-fondo flex flex-col justify-center">
+    <body className= "font-quicksand bg-fixed bg-cover bg-[url('/img/background-night.jpg')]" id="Description">
+      <div id="info" className="h-auto flex flex-col justify-center bg-slate-300 opacity-95">
         <div className="px-56">
           <h3 className="border-b-4 border-black py-16 px-44 text-4xl text-center font-semibold">Una experiencia personalizada para que duermas
             mejor
@@ -34,9 +34,9 @@ function Description () {
             <p className="text-center text-gray-600">Tus datos estan protegidos frente a terceros</p>
           </div>
         </div>
-        <div className='flex justify-center'><Button text="COMENZAR YA" link="" /> </div>
+        <div className='flex justify-center'><Button text="COMENZAR YA" to="" /> </div>
       </div>
-    </div>
+    </body>
   )
 }
 
