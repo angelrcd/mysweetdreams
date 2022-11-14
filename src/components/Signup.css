@@ -18,3 +18,9 @@
     font-weight: 600;
     src: url('../fonts/Caveat.ttf');
 }
+
+@font-face {
+    font-family: 'Urbanist';
+    font-weight: 400;
+    src: url('../fonts/Urbanist.ttf');
+}

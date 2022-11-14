@@ -22,7 +22,8 @@ module.exports = {
       fontFamily: {
         bluetea: 'bluetea',
         quicksand: 'Quicksand',
-        caveat: 'Caveat'
+        caveat: 'Caveat',
+        urbanist: 'Urbanist'
       }
     }
   },
