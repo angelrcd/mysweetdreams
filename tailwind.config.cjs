@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       colors: {
         web: {
-          boton: '#56B6CB',
+          boton: '#79b5f3',
+          boton2: '#3f67bc',
           fondo: '#C9D5E0',
           topBar: '#4FA9A9',
           loginButton: '#A5E1AD'
@@ -16,7 +17,9 @@ module.exports = {
       },
 
       fontFamily: {
-        bluetea: ['bluetea', 'cursive']
+        bluetea: ['bluetea', 'cursive'],
+        caveat: ['caveat', 'cursive'],
+        quicksand: ['quicksand', 'cursive']
       }
     }
   },
