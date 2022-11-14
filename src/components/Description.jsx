@@ -1,5 +1,5 @@
 import './MainPage.css'
-import ButtonComenzar from './ButtonComenzar.jsx'
+import Button from './Button.jsx'
 
 function Description () {
   return (
@@ -34,7 +34,7 @@ function Description () {
             <p className="text-center text-gray-600">Tus datos estan protegidos frente a terceros</p>
           </div>
         </div>
-        <div className='flex justify-center'><ButtonComenzar text="COMENZAR YA" /> </div>
+        <div className='flex justify-center'><Button text="COMENZAR YA" link="" /> </div>
       </div>
     </div>
   )

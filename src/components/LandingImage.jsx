@@ -1,5 +1,5 @@
 import './MainPage.css'
-import ButtonComenzar from './ButtonComenzar.jsx'
+import Button from './Button.jsx'
 
 function LandingImage () {
   return (
@@ -24,7 +24,7 @@ function LandingImage () {
         </p>
       </div>
       <div className='px-28 mb-20'>
-        <ButtonComenzar text="COMENZAR YA" />
+        <Button text="COMENZAR YA" link=""/>
       </div>
     </head>
   )
