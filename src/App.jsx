@@ -5,7 +5,7 @@ import Who from './components/who/Who'
 
 function App () {
   return (
-    <Who />
+    <MainPage />
   )
 };
 
