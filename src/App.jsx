@@ -5,7 +5,14 @@ import Who from './components/who/Who'
 
 function App () {
   return (
-    <MainPage />
+    <div className='App'>
+      <li><Link to='/'>MainPage</Link></li>
+      <li><Link to='/Login'>Login</Link></li>
+      <Routes>
+        <Route path='/' element={<MainPage />}/>
+        <Route path='/Login' element={<Login />}/>
+      </Routes>
+    </div>
   )
 };
 
