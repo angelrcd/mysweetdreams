@@ -1,5 +1,5 @@
 import './FormLogin.css'
-import ButtonComenzar from './ButtonComenzar.jsx'
+import ButtonComenzar from './Button.jsx'
 
 function FormLogin () {
   return (
