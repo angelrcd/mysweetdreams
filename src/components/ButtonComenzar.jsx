@@ -8,8 +8,6 @@ function ButtonComenzar (props) {
         <span>{props.text}</span>
       </button>
     </Link>
-
-  // <div><li><Link to='/Login'>Login</Link></li></div>
   )
 }
 

@@ -2,7 +2,6 @@ import './App.css'
 import MainPage from './components/MainPage.jsx'
 import Login from './components/Login.jsx'
 import { Link, Route, Routes } from 'react-router-dom'
-// const MainPageElement = () => MainPage
 
 function App () {
   return (
@@ -14,7 +13,6 @@ function App () {
         <Route path='/Login' element={<Login />}/>
       </Routes>
     </div>
-    // <MainPage />
   )
 };
 
