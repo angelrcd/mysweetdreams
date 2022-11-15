@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'bluetea';
+  src: url(../fonts/Bluetea.ttf);
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  font-weight: 400;
+  src: url('../fonts/Quicksand.ttf');
+}
+
+@font-face {
+  font-family: 'Caveat';
+  font-weight: 600;
+  src: url('../fonts/Caveat.ttf');
+}
+
+.text-shadow-2 {
+  text-shadow: -2px 2px 0 #000,
+  2px 2px 0 #000,
+ 2px -2px 0 #000,
+-2px -2px 0 #000;
+}
+
+.text-shadow-1 {
+  text-shadow: -1px 1px 0 #000,
+  1px 1px 0 #000,
+ 1px -1px 0 #000,
+-1px -1px 0 #000;
+}
+
+.social:hover {
+  filter: invert(48%) sepia(35%) saturate(923%) hue-rotate(183deg) brightness(77%) contrast(102%);
+}
+
+li {
+  list-style: none;
+  display: inline;
+}
