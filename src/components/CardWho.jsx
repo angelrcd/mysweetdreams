@@ -1,4 +1,4 @@
-import '../MainPage.css'
+import '../css/MainPage.css'
 
 function CardWho (props) {
   return (

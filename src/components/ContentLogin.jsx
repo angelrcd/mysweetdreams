@@ -1,5 +1,5 @@
-import './ContentLogin.css'
-import FormLogin from './FormLogin.jsx'
+import '../css/ContentLogin.css'
+import FormLogin from './FormLogin'
 
 function ContentLogin () {
   return (

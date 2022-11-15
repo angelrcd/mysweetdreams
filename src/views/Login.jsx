@@ -1,6 +1,6 @@
-import './Login.css'
-import TopBar from './TopBar.jsx'
-import ContentLogin from './ContentLogin.jsx'
+import '../css/Login.css'
+import TopBar from '../components/TopBar.jsx'
+import ContentLogin from '../components/ContentLogin.jsx'
 import React, { useState } from 'react'
 
 function Login () {

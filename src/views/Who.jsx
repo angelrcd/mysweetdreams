@@ -1,7 +1,7 @@
-import '../MainPage.css'
-import CardWho from './CardWho'
-import TopBar from '../TopBar'
-import Footer from '../Footer'
+import '../css/MainPage.css'
+import CardWho from '../components/CardWho'
+import TopBar from '../components/TopBar'
+import Footer from '../components/Footer'
 
 function Who () {
   return (

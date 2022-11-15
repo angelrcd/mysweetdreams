@@ -1,4 +1,4 @@
-import './MainPage.css'
+import '../css/MainPage.css'
 import Button from './Button.jsx'
 
 function LandingImage () {

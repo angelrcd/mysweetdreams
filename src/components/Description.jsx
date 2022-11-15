@@ -1,5 +1,5 @@
-import './MainPage.css'
-import Button from './Button.jsx'
+import '../css/MainPage.css'
+import Button from './Button'
 
 function Description () {
   return (

@@ -1,5 +1,5 @@
-import './FormLogin.css'
-import ButtonComenzar from './Button.jsx'
+import '../css/FormLogin.css'
+import Button from './Button.jsx'
 import Input from './Input.jsx'
 import React, { useState } from 'react'
 
@@ -49,7 +49,7 @@ function FormLogin () {
       {msgFail}
       <Input type="text" name="name" id="user-name" placeholder ="User / Email" onChange={handleUser} />
       <Input type="password" name="pass" id="user-pass" placeholder="Password" onChange={handlePass} />
-      <ButtonComenzar text="Entrar" onClick={logIn}/>
+      <Button text="Entrar" onClick={logIn}/>
     </form>
   )
 }
