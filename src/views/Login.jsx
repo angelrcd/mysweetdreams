@@ -5,9 +5,9 @@ import React, { useState } from 'react'
 
 function Login () {
   return (
-    <div className="w-full flex flex-col">
-        <Navbar />
-        <ContentLogin />
+    <div className="flex flex-col">
+      <Navbar background="bg-[#1b2950]"/>
+      <ContentLogin />
     </div>
   )
 }

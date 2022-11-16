@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 function Who () {
   return (
     <>
-    <Navbar />
+    <Navbar background="bg-[#1b2950]"/>
     <div className= "font-quicksand flex flex-col justify-between items-center h-fit bg-web-fondo">
 
       <CardWho

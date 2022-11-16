@@ -48,7 +48,7 @@ function Signup () {
 
   return (
     <main className="w-screen h-screen text-xl">
-          <Navbar />
+          <Navbar background="bg-[#1b2950]"/>
           <header className=" overflow-hidden relative w-full h-5/6 flex justify-center items-center py-24 bg-[url('./img/background-night.jpg')] bg-cover bg-no-repeat bg-top">
           <form className="shadow-md shadow-web-custom1 w-1/3 h-full font-quicksand flex flex-col justify-center items-center rounded-3xl  bg-gray-300/75" onSubmit={handleSubmit}/* bg-web-custom2/75 */>
 
