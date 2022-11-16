@@ -8,10 +8,6 @@ import Who from './views/Who'
 function App () {
   return (
     <div className='App'>
-      <li><Link to='/'>MainPage</Link></li>
-      <li><Link to='/Login'>Login</Link></li>
-      <li><Link to='/Signup'>Signup</Link></li>
-      <li><Link to='/Who'>Who</Link></li>
       <Routes>
         <Route path='/' element={<MainPage />}/>
         <Route path='/Login' element={<Login />}/>

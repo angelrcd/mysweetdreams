@@ -37,7 +37,7 @@
   filter: invert(48%) sepia(35%) saturate(923%) hue-rotate(183deg) brightness(77%) contrast(102%);
 }
 
-li {
+nav > ul >li {
   list-style: none;
   display: inline;
 }
