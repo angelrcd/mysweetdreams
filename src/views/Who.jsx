@@ -1,12 +1,12 @@
 import '../css/MainPage.css'
 import CardWho from '../components/CardWho'
-import TopBar from '../components/TopBar'
+import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 function Who () {
   return (
     <div className= "font-quicksand flex flex-col justify-between items-center h-fit bg-web-fondo">
-      <TopBar />
+      <Navbar />
 
       <CardWho
         img="/img/who/placeholder.png"
