@@ -1,5 +1,6 @@
 import '../css/Signup.css'
 import { useState } from 'react'
+import Navbar from '../components/Navbar'
 
 function Signup () {
   const [email, setEmail] = useState(' ')
@@ -47,14 +48,7 @@ function Signup () {
 
   return (
     <main className="w-screen h-screen text-xl">
-          <nav className="w-full h-1/6 font-urbanist text-2xl bg-web-custom1 flex justify-between items-center px-16">
-            <a className="text-web-custom3 hover:text-purple-500" href="/">SWEETDREAMS</a>
-            <div className="h-full w-[36rem] flex justify-around items-center">
-                <a className="text-web-custom3 hover:text-purple-500" href="#">¿Quiénes somos?</a>
-                <a className="text-web-custom3 hover:text-purple-500" href="#">Iniciar Sesión</a>
-                <a className="text-web-custom3 hover:text-purple-500" href="#">Registrarse</a>
-            </div>
-          </nav>
+          <Navbar />
           <header className=" overflow-hidden relative w-full h-5/6 flex justify-center items-center py-24 bg-[url('./img/background-night.jpg')] bg-cover bg-no-repeat bg-top">
           <form className="shadow-md shadow-web-custom1 w-1/3 h-full font-quicksand flex flex-col justify-center items-center rounded-3xl  bg-gray-300/75" onSubmit={handleSubmit}/* bg-web-custom2/75 */>
 

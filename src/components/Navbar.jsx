@@ -1,18 +1,20 @@
 import '../css/MainPage.css'
+import { Link } from 'react-router-dom'
 
-function TopBar () {
+function Navbar () {
   return (
-        <div className="w-full h-28 flex font-bluetea text-white bg-web-topBar justify-between items-center">
-            <div className="pl-14">
-                <a href="../index.html" className="text-5xl">SWEETDREAMS</a>
-            </div>
-            <div className="flex">
-                <a href="../who/who.html" className="text-5xl mx-10">¿Quienes somos?</a>
-                <a href="" className="text-5xl mx-10">Sign in</a>
-                <a href="" className="text-5xl mx-10">Sign up</a>
-            </div>
-        </div>
+    <nav className='flex px-14 justify-between py-4'>
+        <Link to='/'><div className='flex items-center gap-6 '>
+            <img className='h-[100px]' src="/img/logo.png" alt="logo" />
+            <h1 className="text-shadow-2 text-white font-bluetea text-6xl">SWEETDREAMS</h1>
+        </div></Link>
+        <ul className=' justify-self-end flex gap-5 text-2xl font-quicksand text-white text-shadow-1a items-center font-semibold text-shadow-1'>
+            <li className='hover:text-web-boton duration-300 ease-in-out'><Link to='/Login'>Iniciar sesión</Link></li>
+            <li className='hover:text-web-boton duration-300 ease-in-out'><Link to='/Signup'>Registrarse</Link></li>
+            <li className='hover:text-web-boton duration-300 ease-in-out'><Link to='/Who'>Quienes somos</Link></li>
+        </ul>
+    </nav>
   )
 }
 
-export default TopBar
+export default Navbar
