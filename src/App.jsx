@@ -2,8 +2,9 @@ import './index.css'
 import Signup from './views/Signup'
 import MainPage from './views/MainPage.jsx'
 import Login from './views/Login.jsx'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Who from './views/Who'
+import Dashboard from './views/Dashboard'
 
 function App () {
   return (
@@ -13,6 +14,7 @@ function App () {
         <Route path='/Login' element={<Login />}/>
         <Route path='/Signup' element={<Signup />}/>
         <Route path='/Who' element={<Who />}/>
+        <Route path='/App' element={<Dashboard />}/>
       </Routes>
     </div>
   )

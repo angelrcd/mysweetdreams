@@ -11,7 +11,7 @@ function Navbar (props) {
         <ul className=' justify-self-end flex gap-5 text-2xl font-quicksand text-white text-shadow-1a items-center font-semibold text-shadow-1'>
             <li className='hover:text-web-boton duration-300 ease-in-out'><Link to='/Login'>Iniciar sesión</Link></li>
             <li className='hover:text-web-boton duration-300 ease-in-out'><Link to='/Signup'>Registrarse</Link></li>
-            <li className='hover:text-web-boton duration-300 ease-in-out'><Link to='/Who'>Quienes somos</Link></li>
+            <li className='hover:text-web-boton duration-300 ease-in-out'><Link to='/App'>Quienes somos</Link></li>
         </ul>
     </nav>
   )
