@@ -13,7 +13,7 @@ function LandingImage () {
         </p>
       </div>
       <div className='px-28 mb-20'>
-        <Button text="COMENZAR YA" to=""/>
+        <Button text="COMENZAR YA" to="/Signup"/>
       </div>
     </head>
   )
