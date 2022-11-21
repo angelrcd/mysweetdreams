@@ -34,7 +34,7 @@ function Description () {
             <p className="text-center text-gray-600">Tus datos estan protegidos frente a terceros</p>
           </div>
         </div>
-        <div className='flex justify-center'><Button text="COMENZAR YA" to="" /> </div>
+        <div className='flex justify-center'><Button text="COMENZAR YA" to="/Signup" /> </div>
       </div>
     </body>
   )
