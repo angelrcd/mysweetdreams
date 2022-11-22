@@ -1,7 +1,7 @@
 import '../css/Dashboard.css'
 import { Route, Routes } from 'react-router-dom'
 import Resume from './Resume.jsx'
-
+import Estadisticas from './Estadisticas.jsx'
 function Dashboard () {
   return (
     <div className='w-screen h-screen flex'>
@@ -22,7 +22,7 @@ function Dashboard () {
                     </section>
                 </div>
             </section>
-            <section title='settings' className='w-full h-1/2 flex flex-col bg-pink-400'>
+            <section title='settings' className='w-full h-1/2 flex flex-col cursor-pointer bg-pink-400'>
               <div className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Resumen</div>
               <div className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Estadísticas</div>
               <div className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Calendario</div>
@@ -32,6 +32,7 @@ function Dashboard () {
         </nav>
       <Routes>
         <Route path="/Resume" element={<Resume />} />
+        <Route path="/Estadisticas" element={<Estadisticas />} />
       </Routes>
     </div>
   )
