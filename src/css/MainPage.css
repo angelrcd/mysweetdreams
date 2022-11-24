@@ -53,4 +53,36 @@ nav > ul >li {
   input[type="date"]::-webkit-calendar-picker-indicator { 
     filter: invert(1);
   }
+
+  .svg, .social {
+    filter: invert(1);
+  }
+}
+
+input:required:invalid {
+  outline: 2px solid #f87171;
+  outline-offset: 2px;
+  background-image: url("/icons/incorrect.svg");
+  background-size: 15px;
+  background-position: 99% 10%;
+  background-repeat: no-repeat;
+}
+
+input:placeholder-shown {
+  outline: 2px solid transparent!important;
+  background-image: none!important;
+  
+}
+
+input:required:valid {
+  background-image: url("/icons/correct.svg");
+  outline: 2px solid #79b5f3;
+  background-size: 15px;
+  background-position: 99% 10%;
+  background-repeat: no-repeat;
+}
+
+input[type="date"] input[value=""]{
+  outline: 2px solid transparent!important;
+  background-image: none!important;
 }

@@ -7,7 +7,7 @@ function Who () {
   return (
     <>
     <Navbar background="bg-[#1b2950]"/>
-    <div className= "font-quicksand flex flex-col justify-between items-center h-fit bg-web-fondo">
+    <div className= "font-quicksand flex flex-col justify-between items-center h-fit bg-web-fondo dark:bg-[#1b1b32] dark:text-gray-50">
 
       <CardWho
         img="/img/who/placeholder.png"
