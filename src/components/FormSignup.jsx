@@ -15,7 +15,7 @@ function FormSignup (props) {
           <fieldset className='flex flex-col gap-4 dark:text-gray-50'>
             <Input header="Email" id="email" type="email" placeholder="Introduce tu email" />
             <Input header="Contraseña" id="password" type="password" placeholder="Introduzca contraseña" onChange="form.validatePassword.pattern = this.value;" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" title="Debe tener 8 caracteres o mas, al menos una mayúscula y caracter especial" />
-            <Input header="Repetir Contraseña" id="validatePassword" type="password" placeholder="Vuelva a introducir su contraseña" title="Las contraseñas deben coincidir" />
+            <Input header="Repetir Contraseña" id="validatePassword" type="password" patter="" placeholder="Vuelva a introducir su contraseña" title="Las contraseñas deben coincidir" />
           </fieldset>
           <button type="submit" className="font-quicksand font-bold w-fit mx-auto mt-6 px-10 py-2 text-3xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-full mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton">Registrarse</button>
         </form>

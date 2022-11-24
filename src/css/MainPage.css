@@ -59,7 +59,7 @@ nav > ul >li {
   }
 }
 
-input:required:invalid {
+input:not(:placeholder-shown) {
   outline: 2px solid #f87171;
   outline-offset: 2px;
   background-image: url("/icons/incorrect.svg");
@@ -68,10 +68,14 @@ input:required:invalid {
   background-repeat: no-repeat;
 }
 
-input:placeholder-shown {
-  outline: 2px solid transparent!important;
-  background-image: none!important;
-  
+
+input:not(:focus)[type="date"]{
+  outline: 2px solid transparent;
+  background-image: none;
+}
+input:not(:focus)[type="file"]{
+  outline: 2px solid transparent;
+  background-image: none;
 }
 
 input:required:valid {
@@ -80,9 +84,4 @@ input:required:valid {
   background-size: 15px;
   background-position: 99% 10%;
   background-repeat: no-repeat;
-}
-
-input[type="date"] input[value=""]{
-  outline: 2px solid transparent!important;
-  background-image: none!important;
 }
