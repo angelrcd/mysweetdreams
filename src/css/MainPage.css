@@ -26,18 +26,18 @@
 -2px -2px 0 #000;
 }
 
+.text-shadow-2-dark {
+  text-shadow: -2px 2px 0 #fff,
+  2px 2px 0 #fff,
+ 2px -2px 0 #fff,
+-2px -2px 0 #fff;
+}
+
 .text-shadow-1 {
   text-shadow: -1px 1px 0 #000,
   1px 1px 0 #000,
  1px -1px 0 #000,
 -1px -1px 0 #000;
-}
-
-.text-shadow-1-dark-mode {
-  text-shadow: -1px 1px 0 #000,
-  1px 1px 0 #fff,
- 1px -1px 0 #fff,
--1px -1px 0 #fff;
 }
 
 .social:hover {
@@ -49,9 +49,8 @@ nav > ul >li {
   display: inline;
 }
 
-
 @media (prefers-color-scheme: dark) {
-  input[type="date"]::-webkit-calendar-picker-indicator{
+  input[type="date"]::-webkit-calendar-picker-indicator { 
     filter: invert(1);
   }
 }
