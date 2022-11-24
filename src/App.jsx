@@ -3,18 +3,18 @@ import Signup from './views/Signup'
 import MainPage from './views/MainPage.jsx'
 import Login from './views/Login.jsx'
 import UserDataForm from './views/UserDataForm.jsx'
-import { Link, Route, Routes } from 'react-router-dom'
 import Who from './views/Who'
+import { Link, Route, Routes } from 'react-router-dom'
 
 function App () {
   return (
     <div className='App'>
       <Routes>
         <Route path='/' element={<MainPage />}/>
-        <Route path='/Login' element={<Login />}/>
-        <Route path='/Signup' element={<Signup />}/>
-        <Route path='/Who' element={<Who />}/>
-        <Route path='/aa' element={<UserDataForm />}/>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/signup' element={<Signup />}/>
+        <Route path='/who' element={<Who />}/>
+        <Route path='/new-user-form' element={<UserDataForm />}/>
       </Routes>
     </div>
   )
