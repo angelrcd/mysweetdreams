@@ -1,10 +1,10 @@
 import './index.css'
-import Signup from './views/Signup'
 import MainPage from './views/MainPage.jsx'
-import Login from './views/Login.jsx'
 import UserDataForm from './views/UserDataForm.jsx'
 import Who from './views/Who'
-import { Link, Route, Routes } from 'react-router-dom'
+import Signup from './views/Signup.jsx'
+import Login from './views/Login.jsx'
+import { Route, Routes } from 'react-router-dom'
 
 function App () {
   return (

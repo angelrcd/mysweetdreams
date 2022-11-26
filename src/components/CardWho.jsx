@@ -3,7 +3,7 @@ import '../css/MainPage.css'
 function CardWho (props) {
   return (
     <>
-      <div className="p-10 w-11/12 flex text-xl border-b-2 border-black">
+      <div className="p-10 w-11/12 flex text-xl border-b-2 border-black dark:border-gray-50">
         <div className={`w-1/3 flex flex-col items-center justify-center gap-3 ${props.order}`}>
           <img className='rounded-full' src={props.img} alt="" />
           <h2 className='font-semibold text-3xl'>{props.name}</h2>

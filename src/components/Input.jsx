@@ -2,7 +2,11 @@ import '../css/Input.css'
 
 function Input (props) {
   return (
-        <input type={props.type} name={props.name} id={props.id} placeholder={props.placeholder} onChange={props.onChange} className="w-80 h-20 bg-gray-100 border-2 border-black rounded-3xl shadow-input px-5 font-quicksand text-xl"/>
+    <label htmlFor={props.id}>{props.header}
+      <input id={props.id} name={props.id} type={props.type} placeholder={props.placeholder} pattern={props.pattern}
+      title={props.title} required min={props.min} max={props.max} maxLength={props.maxlength} minLength={props.minlength}
+      className='bg-gray-200 dark:bg-[#0a0a23] w-full rounded-md focus:shadow-outline py-2 px-5' />
+    </label>
   )
 }
 
