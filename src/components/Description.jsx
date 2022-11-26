@@ -1,5 +1,5 @@
 import '../css/MainPage.css'
-import Button from './Button'
+import { Link } from 'react-router-dom'
 
 function Description () {
   return (
@@ -34,7 +34,13 @@ function Description () {
             <p className="text-center text-gray-600 dark:text-gray-100">Tus datos estan protegidos frente a terceros</p>
           </div>
         </div>
-        <div className='flex justify-center'><Button text="COMENZAR YA" to="/Signup" /> </div>
+        <div className='flex justify-center'>
+          <Link to="/Signup">
+            <button className="button-web" >
+              COMENZAR YA
+            </button>
+          </Link>
+        </div>
       </div>
     </body>
   )

@@ -1,56 +1,19 @@
-import '../css/FormLogin.css'
-import Button from './Button.jsx'
+import '../css/MainPage.css'
 import Input from './Input.jsx'
-import React, { useState } from 'react'
+import FormFooterText from './FormFooterText.jsx'
 
-function FormLogin () {
-  const [Logged, setLogged] = useState('false')
-  const [user, setUser] = useState('')
-  const [pass, setPass] = useState('')
-  let msgFail = null
-
-  const handleUser = (event) => {
-    setUser(event.target.value)
-  }
-
-  const handlePass = (event) => {
-    setPass(event.target.value)
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-  }
-
-  const logIn = () => {
-    if (user.length === 0 || pass.length === 0) {
-      setLogged('missed')
-      alert('Completa todos los campos')
-    } else if (user === 'admin' && pass === '123') { // Habria que crear una funcion que consulte la bbdd
-      alert('CORRECTO!!!')
-      setLogged('true')
-      document.getElementById('form').style.display = 'none'
-    } else {
-      setLogged('failed')
-      alert('Usuario y/o contraseña incorrectos')
-    }
-  }
-
-  if (Logged === 'failed') {
-    msgFail = <p className='text-red-600'>Usuario y/o contraseña incorrectos</p>
-  } else if (Logged === 'missed') {
-    msgFail = <p className='text-red-600 '>Rellene todos los campos, por favor</p>
-  } else {
-    msgFail = ''
-  }
-
+function FormLogin (props) {
   return (
-    <form id="form" className="h-[600px] w-[450px] bg-white rounded-[40px] flex flex-col justify-around items-center pt-11 shadow-login  border-2 border-black" method="post" action="" onSubmit={handleSubmit}>
-      <h3 className="font-quicksand text-3xl text-gray-500"> <strong className="text-black">Bienvenido.</strong> Entra.</h3>
-      {msgFail}
-      <Input type="text" name="name" id="user-name" placeholder ="User / Email" onChange={handleUser} />
-      <Input type="password" name="pass" id="user-pass" placeholder="Password" onChange={handlePass} />
-      <Button text="Entrar" onClick={logIn}/>
-    </form>
+    <>
+      <form id={props.id} className='w-fit mt-14 bg-gray-100 dark:bg-[#1b1b32] opacity-95 rounded-2xl border-2 border-black pt-11 px-16 font-quicksand text-2xl flex flex-col gap-4 mx-5' method={props.method} action={props.action}>
+          <fieldset className='flex flex-col gap-4 dark:text-gray-50'>
+            <Input header="Email" id="email" type="email" placeholder="Introduce tu email" />
+            <Input header="Contraseña" id="password" type="password" placeholder="Introduce tu contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" title="Debe tener 8 caracteres o mas, al menos una mayúscula y caracter especial" />
+          </fieldset>
+          <button type="submit" className="mx-auto mt-6 button-web">Iniciar sesión</button>
+        </form>
+        <FormFooterText text="¿Aún no tienes cuenta?" linkText="Registrate aquí" redirectTo="/Signup" />
+    </>
   )
 }
 

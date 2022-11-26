@@ -1,6 +1,5 @@
 import '../css/MainPage.css'
-import Button from '../components/Button.jsx'
-import Input from '../components/InputNew.jsx'
+import Input from './Input.jsx'
 import FormFooterText from './FormFooterText.jsx'
 
 function FormNewUser (props) {
@@ -13,7 +12,7 @@ function FormNewUser (props) {
             <Input header="Fecha de nacimiento" id="birthdate" type="date" min="1900-01-01" max="2020-01-01" />
             <Input header="Foto de perfil" id="profilePicture" type="file" min="hola" />
           </fieldset>
-          <button type="submit" className="font-quicksand font-bold w-fit mx-auto mt-6 px-10 py-2 text-3xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-full mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton">Enviar y continuar</button>
+          <button type="submit" className="mx-auto mt-6 button-web">Enviar y continuar</button>
         </form>
         <FormFooterText text="¿No quieres rellenar tus datos ahora?" linkText="Continua aquí" redirectTo="direccion dashboard" />
     </>

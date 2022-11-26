@@ -1,6 +1,5 @@
 import '../css/MainPage.css'
-import Button from '../components/Button.jsx'
-import Input from '../components/InputNew.jsx'
+import Input from './Input.jsx'
 import FormFooterText from './FormFooterText.jsx'
 import { useState } from 'react'
 
@@ -19,7 +18,7 @@ function FormSignup (props) {
             </label>
             <Input header="Repetir Contraseña" id="validatePassword" type="password" pattern={regexp} placeholder="Vuelva a introducir su contraseña" title="Las contraseñas deben coincidir" />
           </fieldset>
-          <button type="submit" className="font-quicksand font-bold w-fit mx-auto mt-6 px-10 py-2 text-3xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-full mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton">Registrarse</button>
+          <button type="submit" className="mx-auto mt-6 button-web">Registrarse</button>
         </form>
         <FormFooterText text="¿Ya tienes cuenta?" linkText="Inicia sesión aquí" redirectTo="/Login" />
     </>

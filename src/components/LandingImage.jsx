@@ -1,6 +1,6 @@
 import '../css/MainPage.css'
-import Button from './Button.jsx'
 import Navbar from './Navbar'
+import { Link } from 'react-router-dom'
 
 function LandingImage () {
   return (
@@ -13,7 +13,11 @@ function LandingImage () {
         </p>
       </div>
       <div className='px-28 mb-20'>
-        <Button text="COMENZAR YA" to="/Signup"/>
+        <Link to="/Signup">
+          <button className="button-web" >
+            COMENZAR YA
+          </button>
+        </Link>
       </div>
     </head>
   )
