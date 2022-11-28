@@ -9,7 +9,7 @@ function FormSignup (props) {
 
   return (
     <>
-      <form id={props.id} className='w-fit mt-14 bg-gray-100 dark:bg-[#1b1b32] opacity-95 rounded-2xl border-2 border-black pt-11 px-16 font-quicksand text-2xl flex flex-col gap-4 mx-5' method={props.method} action={props.action}>
+      <form id={props.id} className='w-fit mt-14 bg-gray-100 dark:bg-web-formBgDarkMode opacity-95 rounded-2xl border-2 border-black pt-11 px-4 md:px-16 font-quicksand text-xl md:text-2xl flex flex-col gap-4 mx-5' method={props.method} action={props.action}>
           <fieldset className='flex flex-col gap-4 dark:text-gray-50'>
             <Input header="Email" id="email" type="email" placeholder="Introduce tu email" />
             <label htmlFor="password">Contraseña

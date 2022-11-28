@@ -5,7 +5,6 @@ import FormLogin from '../components/FormLogin'
 function Login () {
   return (
     <>
-
       <div className="bg-fixed bg-cover bg-center bg-[url('/img/background-night.jpg')] h-screen flex flex-col items-center">
         <div className='w-screen'>
           <Navbar />
