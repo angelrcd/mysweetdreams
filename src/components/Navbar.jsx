@@ -1,19 +1,33 @@
-import '../css/MainPage.css'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
 
-function Navbar (props) {
+function Navbar () {
+  const [nav, setNav] = useState(false)
+
+  const handleNav = () => {
+    setNav(!nav)
+  }
+
   return (
-    <nav className={`flex px-14 w-screen justify-between py-4 ${props.background}`}>
-        <Link to='/'><div className='flex items-center gap-6 '>
-            <img className='h-[100px]' src="/img/logo.png" alt="logo" />
-            <h1 className="text-shadow-2 text-white font-bluetea text-6xl">SWEETDREAMS</h1>
-        </div></Link>
-        <ul className=' justify-self-end flex gap-5 text-2xl font-quicksand text-white text-shadow-1a items-center font-semibold text-shadow-1'>
-            <li className='hover:text-web-boton duration-300 ease-in-out'><Link to='/Login'>Iniciar sesión</Link></li>
-            <li className='hover:text-web-boton duration-300 ease-in-out'><Link to='/Signup'>Registrarse</Link></li>
-            <li className='hover:text-web-boton duration-300 ease-in-out'><Link to='/Who'>Quienes somos</Link></li>
+    <div className="flex justify-between items-center h-20 max-w-[1240px] mx-auto px-4 text-black">
+      <h1 className='w-full text-xl font-bold text-web-boton'>REACT.</h1>
+      <ul className='hidden md:flex'>
+        <li className='p-4'>Iniciar sesión</li>
+        <li className='p-4'>Registrate</li>
+        <li className='p-4'>Quienes somos</li>
+      </ul>
+      <div onClick={handleNav} className='block md:hidden'>
+        {!nav ? <img className='h-8' src="/icons/cancel.svg" alt=" close menu button" /> : <img className='h-8' src="/icons/menu.svg" alt="menu button" />}
+      </div>
+      <div className={!nav ? 'fixed left-0 top-0 w-[60%] h-fit border-r border-b border-gray-400 rounded-br-xl bg-web-fondo ease-in-out duration-500 z-10' : 'fixed left-[-100%]'}>
+        <h1 className='w-full text-xl font-bold text-web-boton m-4'>REACT.</h1>
+
+        <ul className='p-4'>
+          <li className='p-4 border-b border-gray-400'>Iniciar sesión</li>
+          <li className='p-4 border-b border-gray-400'>Registrate</li>
+          <li className='p-4'>Quienes somos</li>
         </ul>
-    </nav>
+      </div>
+    </div>
   )
 }
 
