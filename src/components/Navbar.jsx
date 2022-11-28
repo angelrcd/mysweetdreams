@@ -23,14 +23,14 @@ function Navbar () {
       <div onClick={handleNav} className='block md:hidden'>
         {!nav ? <img className='h-[30px] filter dark:invert' src="/icons/cancel.svg" alt=" close menu button" /> : <img className='h-[30px] filter dark:invert' src="/icons/menu.svg" alt="menu button" />}
       </div>
-      <div className={!nav ? 'fixed left-0 top-0 w-[60%] sm:w-[40%] h-fit border-r border-b border-gray-700 dark:border-gray-200 rounded-br-xl bg-web-fondo dark:bg-web-formBgDarkMode ease-in-out duration-500 z-10' : 'fixed left-[-100%]'}>
+      <div className={!nav ? 'fixed left-0 top-0 w-[60%] sm:w-[40%] h-fit border-r border-b border-gray-700 dark:border-gray-200 rounded-br-xl bg-web-fondo dark:bg-web-formBgDarkMode ease-in-out duration-500 z-10' : 'fixed left-[-100%] top-0 ease-in-out duration-500 z-10'}>
 
-        <h1 className='md:hidden w-full text-lg font-semibold font-bluetea text-web-boton text-shadow-1'>SWEETDREAMS</h1>
+        <h1 className='md:hidden w-full text-lg font-semibold font-bluetea text-web-boton text-shadow-1 mx-1'>SWEETDREAMS</h1>
 
         <ul className='p-4 dark:text-gray-100'>
           <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='/Login'>Iniciar sesión</Link></li>
           <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='/Signup'>Registrate</Link></li>
-          <li className='p-2'><Link to='/Who'>Quienes somos</Link></li>
+          <li className='py-2'><Link to='/Who'>Quienes somos</Link></li>
         </ul>
       </div>
     </div>
