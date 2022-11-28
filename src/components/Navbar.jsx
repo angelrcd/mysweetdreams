@@ -16,9 +16,9 @@ function Navbar () {
         <h1 className='hidden xl:block w-full text-xl md:text-4xl font-bold text-shadow-2 text-white font-bluetea'>MYSWEETDREAMS</h1>
       </div></Link>
       <ul className='hidden md:flex text-2xl text-shadow-1 font-semibold text-white'>
-        <li className='p-4 hover:text-web-boton duration-300 ease-in-out'><Link to='/Login'>Iniciar sesión</Link></li>
-        <li className='p-4 hover:text-web-boton duration-300 ease-in-out'><Link to='/Signup'>Registrate</Link></li>
-        <li className='p-4 hover:text-web-boton duration-300 ease-in-out'><Link to='/Who'>Quienes somos</Link></li>
+        <li className='pr-3 py-3 pl-0 hover:text-web-boton duration-300 ease-in-out'><Link to='/Login'>Iniciar sesión</Link></li>
+        <li className='p-3 hover:text-web-boton duration-300 ease-in-out'><Link to='/Signup'>Registrate</Link></li>
+        <li className='p-3 hover:text-web-boton duration-300 ease-in-out'><Link to='/Who'>Quienes somos</Link></li>
       </ul>
       <div onClick={handleNav} className='block md:hidden'>
         {!nav ? <img className='h-[30px] filter dark:invert' src="/icons/cancel.svg" alt=" close menu button" /> : <img className='h-[30px] filter dark:invert' src="/icons/menu.svg" alt="menu button" />}
@@ -28,9 +28,9 @@ function Navbar () {
         <h1 className='md:hidden w-full text-lg font-semibold font-bluetea text-web-boton text-shadow-1'>SWEETDREAMS</h1>
 
         <ul className='p-4 dark:text-gray-100'>
-          <li className='p-4 border-b border-gray-700 dark:border-gray-100'><Link to='/Login'>Iniciar sesión</Link></li>
-          <li className='p-4 border-b border-gray-700 dark:border-gray-100'><Link to='/Signup'>Registrate</Link></li>
-          <li className='p-4'><Link to='/Who'>Quienes somos</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='/Login'>Iniciar sesión</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='/Signup'>Registrate</Link></li>
+          <li className='p-2'><Link to='/Who'>Quienes somos</Link></li>
         </ul>
       </div>
     </div>
