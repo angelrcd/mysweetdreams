@@ -7,7 +7,6 @@ input:not(:placeholder-shown) {
   background-repeat: no-repeat;
 }
 
-
 input:not(:focus)[type="date"]{
   outline: 2px solid transparent;
   background-image: none;
@@ -23,4 +22,10 @@ input:required:valid {
   background-size: 15px;
   background-position: 99% 10%;
   background-repeat: no-repeat;
+}
+
+@media (prefers-color-scheme: dark) {
+  input[type="date"]::-webkit-calendar-picker-indicator { 
+    filter: invert(1);
+  }
 }
