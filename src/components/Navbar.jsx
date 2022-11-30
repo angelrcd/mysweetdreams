@@ -13,7 +13,7 @@ function Navbar () {
     <div className="flex justify-between items-center md:h-20 h-10 mx-auto px-4 text-black md:bg-transparent bg-white dark:bg-web-formBgDarkMode">
       <Link to='/'><div className='flex items-center gap-5 ml-4'>
         <img className='h-[40px] md:h-[70px]' src="/img/logo.png" alt="logo" />
-        <h1 className='hidden xl:block w-full text-xl md:text-4xl font-bold text-shadow-2 text-white font-bluetea'>MYSWEETDREAMS</h1>
+        <h1 className="hidden min-[400px]:block md:hidden xl:block md:text-3xl w-full text-shadow-1 lg:text-shadow-2 text-white font-bluetea">MYSWEETDREAMS</h1>
       </div></Link>
       <ul className='hidden md:flex text-2xl text-shadow-1 font-semibold text-white'>
         <li className='pr-3 py-3 pl-0 hover:text-web-boton duration-300 ease-in-out'><Link to='/Login'>Iniciar sesión</Link></li>
