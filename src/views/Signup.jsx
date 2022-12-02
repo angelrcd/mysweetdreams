@@ -9,7 +9,7 @@ function Signup () {
       <div className='w-screen'>
         <Navbar />
       </div>
-      <FormSignup id="form-signup" method="post" action="http://localhost:3000/new-user/" />
+      <FormSignup id="form-signup" method="post" action="http://localhost:3000/users/add" />
     </div>
   </>
   )
