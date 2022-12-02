@@ -67,7 +67,7 @@ function Navbar () {
 
   return (
     <div>
-      <div className='z-10git fixed w-screen flex justify-between items-center md:h-20 h-10 mx-auto px-4 text-black md:bg-transparent bg-white dark:bg-web-formBgDarkMode'>
+      <div className='z-10 w-screen flex justify-between items-center md:h-20 h-10 mx-auto px-4 text-black md:bg-transparent bg-white dark:bg-web-formBgDarkMode'>
         <Link to='/'><div className='flex items-center gap-5 ml-4'>
           <img className='h-[40px] md:h-[70px]' src="/img/logo.png" alt="logo" />
           <h1 className="hidden md:hidden xl:block md:text-3xl w-full text-shadow-1 lg:text-shadow-2 text-white font-bluetea">MYSWEETDREAMS</h1>
