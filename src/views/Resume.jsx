@@ -16,8 +16,8 @@ function Resume () {
               <Grafica />
             </div>
             <div className='w-full h-full bg-red-600'></div>
-          <div className='w-full h-full flex justify-center items-center bg-yellow-600'>
-              <Calendar className="w-full h-full" onClickDay={helloWorld} />
+            <div className='w-full h-full flex justify-center items-center bg-yellow-600'>
+                <Calendar className="w-full h-full" onClickDay={helloWorld} />
             </div>
             <div className='w-full h-full bg-green-600'></div>
         </main>

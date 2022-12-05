@@ -1,7 +1,10 @@
 import '../css/Dashboard.css'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Link } from 'react-router-dom'
 import Resume from './Resume.jsx'
 import Estadisticas from './Estadisticas.jsx'
+import Calendario from './Calendario'
+import NewData from './NewData'
+
 function Dashboard () {
   return (
     <div className='w-screen h-screen flex'>
@@ -23,16 +26,18 @@ function Dashboard () {
                 </div>
             </section>
             <section title='settings' className='w-full h-1/2 flex flex-col cursor-pointer bg-pink-400'>
-              <div className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Resumen</div>
-              <div className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Estadísticas</div>
-              <div className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Calendario</div>
-              <div className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Consejos</div>
-              <div className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-2'>Añadir datos</div>
+              <Link to={'Resume'} className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Resumen</Link>
+              <Link to={'Estadisticas'} className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Estadísticas</Link>
+              <Link to={'Calendario'} className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Calendario</Link>
+              <Link to={'Tips'} className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Consejos</Link>
+              <Link to={'NewData'} className='w-full h-1/5 flex justify-center items-center hover:bg-red-500 border-solid border-black border-2'>Añadir datos</Link>
             </section>
         </nav>
       <Routes>
         <Route path="/Resume" element={<Resume />} />
         <Route path="/Estadisticas" element={<Estadisticas />} />
+        <Route path="/Calendario" element={<Calendario />} />
+        <Route path="/NewData" element={<NewData />} />
       </Routes>
     </div>
   )
