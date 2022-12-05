@@ -3,11 +3,42 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 function Navbar () {
+  // Detecta si el menu de movil esta abierto
   const [nav, setNav] = useState(true)
+  // Detecta si la barra esta visible o no, cambia al hacer scroll
+  const [show, setShow] = useState(true)
+  // Detecta si el último scroll fue hacia arriba o hacia abajo
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   const handleNav = () => {
     setNav(!nav)
   }
+
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') {
+      if (window.scrollY > lastScrollY) { // si scroll hacia abajo esconde la navbar
+        setShow(false)
+        console.log(show)
+      } else { // si scroll hacia arriba muestra la navbar
+        setShow(true)
+        console.log(show)
+      }
+
+      // recuerda la localización actual para usarla en el próximo movimiento
+      setLastScrollY(window.scrollY)
+    }
+  }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar)
+
+      // cleanup function
+      return () => {
+        window.removeEventListener('scroll', controlNavbar)
+      }
+    }
+  }, [lastScrollY])
 
   useEffect(() => {
     if (!nav) {
@@ -49,7 +80,6 @@ function Navbar () {
   const wheelOpt = supportsPassive ? { passive: false } : false
   const wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel'
 
-  // call this to Disable
   function disableScroll () {
     window.addEventListener('DOMMouseScroll', preventDefault, false) // older FF
     window.addEventListener(wheelEvent, preventDefault, wheelOpt) // modern desktop
@@ -57,7 +87,6 @@ function Navbar () {
     window.addEventListener('keydown', preventDefaultForScrollKeys, false)
   }
 
-  // call this to Enable
   function enableScroll () {
     window.removeEventListener('DOMMouseScroll', preventDefault, false)
     window.removeEventListener(wheelEvent, preventDefault, wheelOpt)
@@ -67,7 +96,7 @@ function Navbar () {
 
   return (
     <div>
-      <div className='z-10 w-screen flex justify-between items-center md:h-20 h-10 mx-auto px-4 text-black md:bg-transparent bg-white dark:bg-web-formBgDarkMode'>
+      <div className={`${show ? 'navVisible' : 'navNotVisible'} z-10 w-screen flex justify-between items-center md:h-20 h-10 mx-auto px-4 text-black md:bg-transparent bg-white dark:bg-web-formBgDarkMode`}>
         <Link to='/'><div className='flex items-center gap-5 ml-4'>
           <img className='h-[40px] md:h-[70px]' src="/img/logo.png" alt="logo" />
           <h1 className="hidden md:hidden xl:block md:text-3xl w-full text-shadow-1 lg:text-shadow-2 text-white font-bluetea">MYSWEETDREAMS</h1>
