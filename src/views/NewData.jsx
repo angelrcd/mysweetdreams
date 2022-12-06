@@ -25,25 +25,33 @@ function NewData () {
 
             </div>
         </div>
-        <div className='w-full h-2/3 grid grid-cols-2 grid-rows-2 bg-blue-600'>
-            <div className='w-full h-full bg-pink-500'>
-                <h2>¿Te has despertado alguna vez?</h2>
-                <input type="checkbox" value={0} />
-                <label>No</label><br />
-                <input type="checkbox" value={1} />
-                <label>Si,una vez</label><br />
-                <input type="checkbox" value={2} />
-                <label>Si,dos veces o más</label>
-
-                <h3>¿Diria que ha sido un sueño reparador?</h3>
-                <input type="checkbox" value={1} />
-                <label>Si</label><br />
-                <input type="checkbox" value={0} />
-                <label>No</label><br />
+        <div className='w-full h-2/3 grid grid-cols-2 grid-rows-2'>
+              <div className='w-full h-full flex justify-center items-center'>
+                <div>
+                    <h2>¿Te has despertado alguna vez?</h2>
+                    <input type="checkbox" value={0} />
+                    <label>No</label><br />
+                    <input type="checkbox" value={1} />
+                    <label>Si,una vez</label><br />
+                    <input type="checkbox" value={2} />
+                    <label>Si,dos veces o más</label>
+                </div>
             </div>
-            <div className='w-full h-full row-span-3 bg-amber-800'>
-                <h2>Otras observaciones</h2>
-                <textarea cols="30" rows="10"></textarea>
+            <div className='w-full h-full flex justify-center items-center row-span-3'>
+                <div>
+                    <h2>Otras observaciones</h2>
+                      <textarea className='border-solid border-black border-2' cols="30" rows="10"></textarea>
+                </div>
+            </div>
+
+              <div className='w-full h-full flex justify-center items-center'>
+                <div>
+                    <h3>¿Diria que ha sido un sueño reparador?</h3>
+                    <input type="checkbox" value={1} />
+                    <label>Si</label><br />
+                    <input type="checkbox" value={0} />
+                    <label>No</label><br />
+                </div>
             </div>
         </div>
     </main>
