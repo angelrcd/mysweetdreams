@@ -2,11 +2,13 @@ import '../css/MainPage.css'
 import Input from './Input.jsx'
 import React, { useState } from 'react'
 import FormFooterText from './FormFooterText.jsx'
+import { useNavigate, redirect } from 'react-router-dom'
 
 function FormLogin (props) {
   const [email, setEmail] = useState('')
   const [pswd, setPswd] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
+  const navigate = useNavigate()
 
   // JSON que incluye los datos introducidos en el formulario de email y password, actualizados en tiempo real
   const jsonData = {
@@ -26,26 +28,40 @@ function FormLogin (props) {
   function handleLogin (event) {
     printErrorMessage()
     event.preventDefault()
+    // fetch('http://localhost:3000/users/authenticate', options)
+    //   .then(response => {
+    //     switch (response.status) {
+    //       case 200:
+    //         linkToDashboard(response)
+    //         break
+    //       case 400:
+    //         printErrorMessage(400)
+    //         break
+    //       default:
+    //     }
+    //   })
     fetch('http://localhost:3000/users/authenticate', options)
-      .then(response => {
-        switch (response.status) {
-          case 200:
-            linkToDashboard()
-            break
-          case 400:
-            printErrorMessage(true)
+      .then(response => response.text())
+      .then(data => {
+        switch (data) {
+          case 'Invalid user/password':
+            printErrorMessage(400)
             break
           default:
+            linkToDashboard(data)
+            break
         }
       })
   }
 
   // TO DO
-  function linkToDashboard () {
-    console.log('200')
+  function linkToDashboard (data) {
+    data = JSON.parse(data)
+    const url = '/dashboard/' + data.userId
+    return navigate(url)
   }
 
-  function printErrorMessage (codeError = false) {
+  function printErrorMessage (codeError = 0) {
     let message = ''
     if (email === '' && pswd === '') {
       message = 'Debe rellenar los campos'
@@ -58,7 +74,7 @@ function FormLogin (props) {
     } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/.test(pswd)) {
       message = 'La contraseña no tiene formato válido'
     } else {
-      if (codeError) {
+      if (codeError === 400) {
         message = 'Usuario o contraseña no valido'
       }
     }
