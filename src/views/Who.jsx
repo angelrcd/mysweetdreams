@@ -10,7 +10,7 @@ function Who () {
       <Navbar />
     </div>
     <div className= "font-quicksand flex flex-col justify-between items-center h-fit bg-web-fondo dark:bg-[#1d1d38] dark:text-gray-50">
-
+      <div className='md:mt-10'></div>
       <CardWho
         img="/img/who/placeholder.png"
         name="Nombre Apellido"
