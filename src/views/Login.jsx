@@ -9,7 +9,7 @@ function Login () {
         <div className='w-screen'>
           <Navbar />
         </div>
-        <FormLogin id="form-signup" method="post" action="http://localhost:3000/users/authenticate" />
+        <FormLogin id="form-signup" />
       </div>
     </>
   )

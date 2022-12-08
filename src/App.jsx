@@ -4,7 +4,8 @@ import UserDataForm from './views/UserDataForm.jsx'
 import Who from './views/Who'
 import Signup from './views/Signup.jsx'
 import Login from './views/Login.jsx'
-import { Route, Routes } from 'react-router-dom'
+import Dashboard from './views/DashBoard'
+import { Routes, Route } from 'react-router-dom'
 
 function App () {
   return (
@@ -14,7 +15,8 @@ function App () {
         <Route path='/login' element={<Login />}/>
         <Route path='/signup' element={<Signup />}/>
         <Route path='/who' element={<Who />}/>
-        <Route path='/new-user-form' element={<UserDataForm />}/>
+        <Route path='/new-user-form/:id' element={<UserDataForm />}/>
+        <Route path='/dashboard/:id' element={<Dashboard />}/>
       </Routes>
     </div>
   )
