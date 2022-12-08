@@ -24,12 +24,12 @@ function Dashboard () {
   return (
     <>
       <h1 className='text-xl p-4'>Dashboard con ID: {userId}</h1>
+      <img className='rounded-full h-20' src={`/userProfiles/${userData.profilePic}`} alt="" />
       <ul className='px-4'>
         <li>Name: {userData.name}</li>
         <li>Last-name: {userData.lastName}</li>
         <li>Email: {userData.email}</li>
         <li>Birthdate: {userData.birthdate}</li>
-        <li>ProfilePic: {userData.profilePic}</li>
       </ul>
     </>
   )
