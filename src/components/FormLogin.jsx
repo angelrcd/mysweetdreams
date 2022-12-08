@@ -2,7 +2,7 @@ import '../css/MainPage.css'
 import Input from './Input.jsx'
 import React, { useState } from 'react'
 import FormFooterText from './FormFooterText.jsx'
-import { useNavigate, redirect } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function FormLogin (props) {
   const [email, setEmail] = useState('')
@@ -28,18 +28,6 @@ function FormLogin (props) {
   function handleLogin (event) {
     printErrorMessage()
     event.preventDefault()
-    // fetch('http://localhost:3000/users/authenticate', options)
-    //   .then(response => {
-    //     switch (response.status) {
-    //       case 200:
-    //         linkToDashboard(response)
-    //         break
-    //       case 400:
-    //         printErrorMessage(400)
-    //         break
-    //       default:
-    //     }
-    //   })
     fetch('http://localhost:3000/users/authenticate', options)
       .then(response => response.text())
       .then(data => {
@@ -85,14 +73,8 @@ function FormLogin (props) {
     <>
       <form id={props.id} className='w-fit mt-20 md:mt-32 bg-gray-100 dark:bg-web-formBgDarkMode opacity-95 rounded-2xl border-2 border-black pt-11 px-4 md:px-16 font-quicksand text-xl md:text-2xl flex flex-col gap-4 mx-5' method={props.method} action={props.action}>
           <fieldset className='flex flex-col gap-4 dark:text-gray-50'>
-          <label htmlFor="email">Email
-              <input id="email" name="email" type="email" placeholder="Introduzca email" onChange={ev => setEmail(ev.target.value)} title="Debe ser un email valido" required
-              className='bg-gray-200 dark:bg-[#0a0a23] w-full rounded-md focus:shadow-outline py-2 px-5' />
-            </label>
-            <label htmlFor="password"><span title="(8 caracteres mínimo, debe tener al menos un número y un caracter especial)">Contraseña</span>
-              <input id="password" name="password" type="password" placeholder="Introduzca contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" onChange={ev => setPswd(ev.target.value)} title="Debe tener 8 caracteres o mas, al menos una mayúscula y caracter especial" required
-              className='bg-gray-200 dark:bg-[#0a0a23] w-full rounded-md focus:shadow-outline py-2 px-5' />
-            </label>
+            <Input value={email} onInput={ev => setEmail(ev.target.value)} header="Email" id="email" type="email" placeholder="Introduzca email" />
+            <Input value={pswd} onInput={ev => setPswd(ev.target.value)} header="Contraseña" id="password" type="password" placeholder="Introduzca contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" />
             <p className='text-red-500 w-[100%]'>{errorMessage}</p>
           </fieldset>
           <button onClick={handleLogin} type="submit" className="mx-auto mt-6 button-web">Iniciar sesión</button>
