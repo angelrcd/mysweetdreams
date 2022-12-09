@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: bluetea;
+  src:
+    url("/fonts/bluetea.otf") format("otf"),
+    url("/fonts/bluetea.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: caveat;
+  src:
+    url("/fonts/Caveat.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: quicksand;
+  src:
+    url("/fonts/Quicksand.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
