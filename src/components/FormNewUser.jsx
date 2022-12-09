@@ -1,8 +1,9 @@
 import '../css/MainPage.css'
 import Input from './Input.jsx'
 import FormFooterText from './FormFooterText.jsx'
-import { useState } from 'react'
+import { useState, createRef } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import moment from 'moment/moment'
 
 function FormNewUser (props) {
   const [name, setName] = useState('')
@@ -29,26 +30,33 @@ function FormNewUser (props) {
     body: JSON.stringify(jsonData)
   }
 
-  function handleNewData (event) {
-    event.preventDefault()
-    fetch(url, options)
-      .then(response => response.text())
-      .then(data => {
-        switch (data) {
-          case 'User not found':
-          case 'Error updating user':
-          case 'Invalid user ID':
-            printErrorMessage(data)
-            break
-          default:
-            linkToDashboard()
-            break
-        }
-      })
+  function areFormsValid () {
+    const isNameValid = (name.length >= 3 && name.length <= 20)
+    const isLastNameValid = (lastName.length >= 3 && lastName.length <= 20)
+    const isBirthdateValid = moment(birthdate).isValid() &&
+      moment(birthdate).isAfter(moment('1900-01-01')) &&
+      moment(birthdate).isBefore(moment('2020-01-01'))
+    return isNameValid && isLastNameValid && isBirthdateValid
   }
 
-  function printErrorMessage (data) {
-    console.log(data)
+  function handleNewData (event) {
+    if (areFormsValid()) {
+      event.preventDefault()
+      fetch(url, options)
+        .then(response => response.text())
+        .then(data => {
+          switch (data) {
+            case 'User not found':
+            case 'Error updating user':
+            case 'Invalid user ID':
+              console.log('ERROR')
+              break
+            default:
+              linkToDashboard()
+              break
+          }
+        })
+    }
   }
 
   function linkToDashboard () {
@@ -62,7 +70,8 @@ function FormNewUser (props) {
             <Input value={name} onInput={ev => setName(ev.target.value)} header="Nombre" id="name" type="text" placeholder="Introduce tu nombre" minlength="3" maxlength="20" />
             <Input value={lastName} onInput={ev => setLastName(ev.target.value)} header="Apellidos" id="lastname" type="text" placeholder="Introduce tus apellidos" minlength="3" maxlength="20" />
             <Input value={birthdate} onInput={ev => setBirthdate(ev.target.value)} header="Fecha de nacimiento" id="birthdate" type="date" min="1900-01-01" max="2020-01-01" />
-            <Input header="Foto de perfil" id="profilePicture" type="file" min="hola" />
+            {// <Input header="Foto de perfil" id="profilePicture" type="file" min="hola" />
+            }
           </fieldset>
           <button onClick={handleNewData} type="submit" className="mx-auto mt-6 button-web">Enviar y continuar</button>
         </form>
