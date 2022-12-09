@@ -2,8 +2,8 @@ import '../css/Dashboard.css'
 import { Route, Routes, Link } from 'react-router-dom'
 import Resume from './Resume.jsx'
 import Estadisticas from './Estadisticas.jsx'
-import Calendario from './Calendario'
-import NewData from './NewData'
+import Calendario from './Calendario.jsx'
+import NewData from './NewData.jsx'
 
 function Dashboard () {
   return (
