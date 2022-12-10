@@ -27,7 +27,7 @@
     @apply fixed duration-300;
   }
   .navNotVisible {
-    @apply fixed translate-y-[-100%] duration-300;
+    @apply fixed translate-y-[-100%] md:translate-y-[0%] duration-300;
   }
 }
 
