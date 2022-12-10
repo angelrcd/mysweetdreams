@@ -19,9 +19,11 @@ function Navbar () {
       if (window.scrollY > lastScrollY) { // si scroll hacia abajo esconde la navbar
         setShow(false)
         console.log(show)
+        console.log(window.scrollY)
       } else { // si scroll hacia arriba muestra la navbar
         setShow(true)
         console.log(show)
+        console.log(window.scrollY)
       }
 
       // recuerda la localización actual para usarla en el próximo movimiento
@@ -96,12 +98,12 @@ function Navbar () {
 
   return (
     <div>
-      <div className={`${show ? 'navVisible' : 'navNotVisible'} z-10 w-screen flex justify-between items-center md:h-20 h-10 mx-auto px-4 text-black md:bg-transparent bg-white dark:bg-web-formBgDarkMode`}>
+      <div className={`${show ? 'navVisible' : 'navNotVisible'} ${window.scrollY === 0 ? 'md:h-20 md:bg-transparent border-transparent' : 'md:bg-gray-200 md:dark:bg-web-formBgDarkMode border-gray-400'} z-10 w-screen border-b flex justify-between items-center h-10 mx-auto px-4 text-black  bg-white dark:bg-web-formBgDarkMode`}>
         <Link to='/'><div className='flex items-center gap-5 ml-4'>
-          <img className='h-[40px] md:h-[70px]' src="/img/logo.png" alt="logo" />
-          <h1 className="hidden md:hidden xl:block md:text-3xl w-full text-shadow-1 lg:text-shadow-2 text-white font-bluetea">MYSWEETDREAMS</h1>
+          <img className={`${window.scrollY === 0 ? 'md:h-[70px]' : ''} h-[40px] duration-300 ease-in-out`} src="/img/logo.png" alt="logo" />
+          <h1 className={`${window.scrollY === 0 ? 'md:text-3xl text-shadow-1 lg:text-shadow-2' : 'md:text-xl md:text-gray-900 md:dark:text-gray-200'} hidden md:hidden xl:block w-full duration-300 ease-in-out text-white font-bluetea`}>SWEETDREAMS</h1>
         </div></Link>
-        <ul className='hidden md:flex text-2xl text-shadow-1 font-semibold text-white'>
+        <ul className={`${window.scrollY === 0 ? 'text-2xl text-shadow-1 text-white' : 'text-lg text-gray-900 dark:text-gray-200'} hidden md:flex font-semibold`}>
           <li className='pr-3 py-3 pl-0 hover:text-web-boton duration-300 ease-in-out'><Link to='/Login'>Iniciar sesión</Link></li>
           <li className='p-3 hover:text-web-boton duration-300 ease-in-out'><Link to='/Signup'>Registrate</Link></li>
           <li className='p-3 hover:text-web-boton duration-300 ease-in-out'><Link to='/Who'>Quienes somos</Link></li>
