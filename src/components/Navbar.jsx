@@ -96,17 +96,21 @@ function Navbar () {
     window.removeEventListener('keydown', preventDefaultForScrollKeys, false)
   }
 
+  function setYTo0 () {
+    window.scrollTo(0, 0)
+  }
+
   return (
     <div>
       <div className={`${show ? 'navVisible' : 'navNotVisible'} ${window.scrollY === 0 ? 'md:h-20 md:bg-transparent border-transparent' : 'md:bg-gray-200 md:dark:bg-web-formBgDarkMode border-gray-400'} z-10 w-screen border-b flex justify-between items-center h-10 mx-auto px-4 text-black  bg-white dark:bg-web-formBgDarkMode`}>
-        <Link to='/'><div className='flex items-center gap-5 ml-4'>
+        <Link onClick={setYTo0} to='/'><div className='flex items-center gap-5 ml-4'>
           <img className={`${window.scrollY === 0 ? 'md:h-[70px]' : ''} h-[40px] duration-300 ease-in-out`} src="/img/logo.png" alt="logo" />
           <h1 className={`${window.scrollY === 0 ? 'md:text-3xl text-shadow-1 lg:text-shadow-2' : 'md:text-xl md:text-gray-900 md:dark:text-gray-200'} hidden md:hidden xl:block w-full duration-300 ease-in-out text-white font-bluetea`}>SWEETDREAMS</h1>
         </div></Link>
         <ul className={`${window.scrollY === 0 ? 'text-2xl text-shadow-1 text-white' : 'text-lg text-gray-900 dark:text-gray-200'} hidden md:flex font-semibold`}>
-          <li className='pr-3 py-3 pl-0 hover:text-web-boton duration-300 ease-in-out'><Link to='/Login'>Iniciar sesión</Link></li>
-          <li className='p-3 hover:text-web-boton duration-300 ease-in-out'><Link to='/Signup'>Registrate</Link></li>
-          <li className='p-3 hover:text-web-boton duration-300 ease-in-out'><Link to='/Who'>Quienes somos</Link></li>
+          <li onClick={setYTo0} className='pr-3 py-3 pl-0 hover:text-web-boton duration-300 ease-in-out'><Link to='/Login'>Iniciar sesión</Link></li>
+          <li onClick={setYTo0} className='p-3 hover:text-web-boton duration-300 ease-in-out'><Link to='/Signup'>Registrate</Link></li>
+          <li onClick={setYTo0} className='p-3 hover:text-web-boton duration-300 ease-in-out'><Link to='/Who'>Quienes somos</Link></li>
         </ul>
         <div onClick={handleNav} className='block md:hidden'>
           <img className='h-[30px] filter dark:invert' src="/icons/menu.svg" alt="menu button" />

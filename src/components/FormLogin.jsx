@@ -30,7 +30,7 @@ function FormLogin (props) {
   function handleLogin (event) {
     if (emailRegex.test(email) && passwordRegex.test(pswd)) {
       event.preventDefault()
-      fetch('http://localhost:3000/users/authenticate', options)
+      fetch('http://localhost:3000/auth/', options)
         .then(response => response.text())
         .then(data => {
           switch (data) {
@@ -48,7 +48,8 @@ function FormLogin (props) {
   // TO DO
   function linkToDashboard (data) {
     data = JSON.parse(data)
-    const url = '/dashboard/' + data.userId
+    // console.log(data)
+    const url = '/dashboard/' + data.authenticatedUser._id
     return navigate(url)
   }
 
