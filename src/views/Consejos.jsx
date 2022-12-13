@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 function Consejos () {
   useEffect(() => {
-    fetch('https://app.mysweetdreams.es:3000/users', { method: 'GET' })
+    fetch('http://localhost:3000/users', { method: 'GET' })
       .then(response => response.json())
       .then(data => console.log(data))
   }, [])
