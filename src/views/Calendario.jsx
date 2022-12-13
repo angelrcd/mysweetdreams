@@ -17,7 +17,7 @@ function Calendario () {
     })
       .then(response => response.json())
       .then(data => console.log(data))
-      .cath(error => console.log(error))
+      .catch(error => console.log(error))
   }, [])
 
   return (

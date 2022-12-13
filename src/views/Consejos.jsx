@@ -5,7 +5,7 @@ function Consejos () {
     fetch('https://localhost:3000/users', { method: 'GET' })
       .then(response => response.json())
       .then(data => console.log(data))
-      .cath(error => console.log(error))
+      .catch(error => console.log(error))
   }, [])
 
   return (
