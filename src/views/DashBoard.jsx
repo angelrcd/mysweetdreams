@@ -8,9 +8,17 @@ function Dashboard () {
   const userId = params.id
   const APIUrl = 'http://localhost:3000/users/' + userId
 
+  const options = {
+    credentials: 'include',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch(APIUrl)
+      const result = await fetch(APIUrl, { credentials: 'include' })
       const jsonResult = await result.json()
 
       setUserData(jsonResult)
