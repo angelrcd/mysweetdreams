@@ -1,7 +1,24 @@
 import '../css/Calendario.css'
 import { Calendar } from 'react-calendar'
+import { useEffect } from 'react'
 
 function Calendario () {
+  const data = {
+    name: 'Juan',
+    email: 'Juan153@gmail.com',
+    password: 'Cortocircuit29123!',
+    birthdate: '26/5/2020'
+  }
+
+  useEffect(() => {
+    fetch('localhost:3000/users', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+  }, [])
+
   return (
         <main className='w-5/6 h-full grid grid-cols-2 grid-rows-2'>
           <Calendar className="w-full h-full" />

@@ -4,6 +4,7 @@ import Resume from './Resume.jsx'
 import Estadisticas from './Estadisticas.jsx'
 import Calendario from './Calendario.jsx'
 import NewData from './NewData.jsx'
+import Consejos from './Consejos.jsx'
 
 function Dashboard () {
   return (
@@ -37,6 +38,7 @@ function Dashboard () {
         <Route path="/Resume" element={<Resume />} />
         <Route path="/Estadisticas" element={<Estadisticas />} />
         <Route path="/Calendario" element={<Calendario />} />
+        <Route path="/Tips" element={<Consejos />} />
         <Route path="/NewData" element={<NewData />} />
       </Routes>
     </div>
