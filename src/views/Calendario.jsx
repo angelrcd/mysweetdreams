@@ -11,7 +11,7 @@ function Calendario () {
   }
 
   useEffect(() => {
-    fetch('178.62.252.159:3000/users', {
+    fetch('https://app.mysweetdreams.es:3000/users', {
       method: 'POST',
       body: JSON.stringify(data)
     })
