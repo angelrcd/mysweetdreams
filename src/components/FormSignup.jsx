@@ -20,6 +20,7 @@ function FormSignup (props) {
   }
 
   const options = {
+    credentials: 'include',
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -49,9 +50,7 @@ function FormSignup (props) {
   }
 
   function linkToNewUserForm (data) {
-    data = JSON.parse(data)
-    const url = '/new-user-form/' + data._id
-    return navigate(url)
+    return navigate('/new-user-form')
   }
 
   return (

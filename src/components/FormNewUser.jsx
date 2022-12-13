@@ -1,8 +1,8 @@
 import '../css/MainPage.css'
 import Input from './Input.jsx'
 import FormFooterText from './FormFooterText.jsx'
-import { useState, createRef } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import moment from 'moment/moment'
 
 function FormNewUser (props) {
@@ -10,10 +10,8 @@ function FormNewUser (props) {
   const [lastName, setLastName] = useState('')
   const [birthdate, setBirthdate] = useState('')
 
-  const params = useParams()
-  const userId = params.id
-  const url = 'http://localhost:3000/users/' + userId
-  const dashboardUrl = '/dashboard/' + userId
+  const url = 'http://localhost:3000/users/myUser'
+  const dashboardUrl = '/dashboard'
   const navigate = useNavigate()
 
   const jsonData = {
@@ -23,6 +21,7 @@ function FormNewUser (props) {
   }
 
   const options = {
+    credentials: 'include',
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
@@ -52,14 +51,15 @@ function FormNewUser (props) {
               console.log('ERROR')
               break
             default:
-              linkToDashboard()
+              linkToDashboard(data)
               break
           }
         })
     }
   }
 
-  function linkToDashboard () {
+  function linkToDashboard (data) {
+    console.log(data)
     return navigate(dashboardUrl)
   }
 

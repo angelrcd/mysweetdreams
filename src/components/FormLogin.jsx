@@ -48,10 +48,7 @@ function FormLogin (props) {
 
   // TO DO
   function linkToDashboard (data) {
-    data = JSON.parse(data)
-    // console.log(data)
-    const url = '/dashboard/' + data.authenticatedUser._id
-    return navigate(url)
+    return navigate('/dashboard/')
   }
 
   return (

@@ -1,12 +1,8 @@
-import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import '../css/MainPage.css'
 
 function Dashboard () {
   const [userData, setUserData] = useState([])
-  const params = useParams()
-  const userId = params.id
-  const APIUrl = 'http://localhost:3000/users/' + userId
 
   const options = {
     credentials: 'include',
@@ -18,7 +14,7 @@ function Dashboard () {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch(APIUrl, { credentials: 'include' })
+      const result = await fetch('http://localhost:3000/users/myUser', { credentials: 'include' })
       const jsonResult = await result.json()
 
       setUserData(jsonResult)
@@ -31,7 +27,7 @@ function Dashboard () {
 
   return (
     <>
-      <h1 className='text-xl p-4'>Dashboard con ID: {userId}</h1>
+      <h1 className='text-xl p-4'>{userData.email}</h1>
       <img className='rounded-full h-20' src={`/userProfiles/${userData.profilePic}`} alt="" />
       <ul className='px-4'>
         <li>Name: {userData.name}</li>
