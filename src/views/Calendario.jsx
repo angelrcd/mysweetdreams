@@ -11,12 +11,13 @@ function Calendario () {
   }
 
   useEffect(() => {
-    fetch('https://localhost:3000/users', {
+    fetch('https://localhost:3000/users/add', {
       method: 'POST',
       body: JSON.stringify(data)
     })
       .then(response => response.json())
       .then(data => console.log(data))
+      .cath(error => console.log(error))
   }, [])
 
   return (
