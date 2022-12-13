@@ -20,6 +20,7 @@ function FormLogin (props) {
 
   // Información sobre el tipo de request que se hará en el fetch
   const options = {
+    credentials: 'include',
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
