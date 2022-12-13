@@ -11,7 +11,7 @@ function Calendario () {
   }
 
   useEffect(() => {
-    fetch('http://localhost:3000/users', {
+    fetch('https://localhost:3000/users', {
       method: 'POST',
       body: JSON.stringify(data)
     })
