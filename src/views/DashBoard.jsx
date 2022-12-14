@@ -39,11 +39,52 @@ function Dashboard () {
 
   return (
     <>
-      <div className='bg-slate-800 text-gray-200 flex h-screen'>
+      <div className='bg-slate-800 bg-fixed text-gray-200 flex'>
         <AppNavbar />
         <div className='w-fit px-8 py-16'>
           <h1 className='text-xl p-4'>{userData.email}</h1>
           <img className='rounded-full h-20' src={`/userProfiles/${userData.profilePic}`} alt="" />
+          <ul className='px-4'>
+            <li>Name: {userData.name}</li>
+            <li>Last-name: {userData.lastName}</li>
+            <li>Email: {userData.email}</li>
+            <li>Birthdate: {userData.birthdate}</li>
+            <li>Sleep data:</li>
+            <p>{JSON.stringify(sleepData)}</p>
+          </ul>
+
+          <ul className='px-4'>
+            <li>Name: {userData.name}</li>
+            <li>Last-name: {userData.lastName}</li>
+            <li>Email: {userData.email}</li>
+            <li>Birthdate: {userData.birthdate}</li>
+            <li>Sleep data:</li>
+            <p>{JSON.stringify(sleepData)}</p>
+          </ul>
+          <ul className='px-4'>
+            <li>Name: {userData.name}</li>
+            <li>Last-name: {userData.lastName}</li>
+            <li>Email: {userData.email}</li>
+            <li>Birthdate: {userData.birthdate}</li>
+            <li>Sleep data:</li>
+            <p>{JSON.stringify(sleepData)}</p>
+          </ul>
+          <ul className='px-4'>
+            <li>Name: {userData.name}</li>
+            <li>Last-name: {userData.lastName}</li>
+            <li>Email: {userData.email}</li>
+            <li>Birthdate: {userData.birthdate}</li>
+            <li>Sleep data:</li>
+            <p>{JSON.stringify(sleepData)}</p>
+          </ul>
+          <ul className='px-4'>
+            <li>Name: {userData.name}</li>
+            <li>Last-name: {userData.lastName}</li>
+            <li>Email: {userData.email}</li>
+            <li>Birthdate: {userData.birthdate}</li>
+            <li>Sleep data:</li>
+            <p>{JSON.stringify(sleepData)}</p>
+          </ul>
           <ul className='px-4'>
             <li>Name: {userData.name}</li>
             <li>Last-name: {userData.lastName}</li>
