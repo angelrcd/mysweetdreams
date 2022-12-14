@@ -24,10 +24,10 @@
     @apply font-quicksand font-bold w-fit px-4 sm:px-10 py-2 text-lg sm:text-2xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-2xl sm:rounded-full mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton;
   }
   .navVisible {
-    @apply fixed duration-300;
+    @apply fixed md:sticky duration-300;
   }
   .navNotVisible {
-    @apply fixed translate-y-[-100%] md:translate-y-[0%] duration-300;
+    @apply fixed md:sticky translate-y-[-100%] md:translate-y-[0%] duration-300;
   }
 }
 
