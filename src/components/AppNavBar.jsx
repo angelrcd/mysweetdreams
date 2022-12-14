@@ -124,7 +124,7 @@ function AppNavbar () {
 
   return (
     <div>
-      <nav className={`${show ? 'navVisible' : 'navNotVisible'} z-10 w-screen md:w-1/6 md:min-w-[300px] h-10 md:h-screen border-b flex md:flex-col justify-between items-center md:items-start px-4 md:px-0 text-black  bg-white md:bg-red-300 dark:bg-web-formBgDarkMode`}>
+      <nav className={`${show ? 'AppNavVisible' : 'AppNavNotVisible'} z-10 w-screen md:w-1/6 md:min-w-[300px] h-10 md:h-screen border-b flex md:flex-col justify-between items-center md:items-start px-4 md:px-0 text-black  bg-white md:bg-red-300 dark:bg-web-formBgDarkMode`}>
         <div className='w-full h-full hidden md:block'>
           <section title='profile-info' className='w-full h-1/2 bg-teal-300'>
             <div className='w-full h-1/2 flex justify-center items-center p-2'>
