@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../css/MainPage.css'
 import AppNavbar from '../components/AppNavBar'
-import { API } from '../../const'
+import { API } from '../../data'
 
 function Dashboard () {
   const [userData, setUserData] = useState([])

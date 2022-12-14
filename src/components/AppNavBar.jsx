@@ -1,7 +1,7 @@
 import '../css/MainPage.css'
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { API, SOCIAL } from '../../const'
+import { API, SOCIAL } from '../../data'
 
 function AppNavbar () {
   // Detecta si el menu de movil esta abierto

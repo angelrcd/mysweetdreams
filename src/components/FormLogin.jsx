@@ -3,7 +3,7 @@ import Input from './Input.jsx'
 import React, { useState } from 'react'
 import FormFooterText from './FormFooterText.jsx'
 import { useNavigate } from 'react-router-dom'
-import { API, EMAIL_REGEX, PSWD_REGEX } from '../../const'
+import { API, EMAIL_REGEX, PSWD_REGEX } from '../../data'
 
 function FormLogin (props) {
   const [email, setEmail] = useState('')

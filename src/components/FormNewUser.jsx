@@ -4,7 +4,7 @@ import FormFooterText from './FormFooterText.jsx'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import moment from 'moment/moment'
-import { API } from '../../const'
+import { API } from '../../data'
 
 function FormNewUser (props) {
   const [name, setName] = useState('')
