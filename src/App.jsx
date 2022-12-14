@@ -13,10 +13,10 @@ function App () {
       <Routes>
         <Route path='/' element={<MainPage />}/>
         <Route path='/login' element={<Login />}/>
-        <Route path='/Signup' element={<Signup />}/>
+        <Route path='/signup' element={<Signup />}/>
         <Route path='/who' element={<Who />}/>
-        <Route path='/new-user-form/:id' element={<UserDataForm />}/>
-        <Route path='/dashboard/:id' element={<Dashboard />}/>
+        <Route path='/new-user-form' element={<UserDataForm />}/>
+        <Route path='/dashboard' element={<Dashboard />}/>
       </Routes>
     </div>
   )

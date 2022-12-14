@@ -35,7 +35,7 @@ function Description () {
           </div>
         </div>
         <div className='flex justify-center'>
-          <Link to="/Signup">
+          <Link to="/signup">
             <button className="button-web" >
               COMENZAR YA
             </button>
