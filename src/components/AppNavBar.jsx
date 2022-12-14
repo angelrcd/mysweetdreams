@@ -1,6 +1,7 @@
 import '../css/MainPage.css'
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { API, SOCIAL } from '../../const'
 
 function AppNavbar () {
   // Detecta si el menu de movil esta abierto
@@ -9,6 +10,27 @@ function AppNavbar () {
   const [show, setShow] = useState(true)
   // Detecta si el último scroll fue hacia arriba o hacia abajo
   const [lastScrollY, setLastScrollY] = useState(0)
+
+  const [userData, setUserData] = useState([])
+
+  const options = {
+    credentials: 'include',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetch(API.USERS.MY_USER, options)
+      const jsonResult = await result.json()
+
+      setUserData(jsonResult)
+    }
+
+    fetchData()
+  }, [])
 
   const handleNav = () => {
     setNav(!nav)
@@ -106,14 +128,14 @@ function AppNavbar () {
         <div className='w-full h-full hidden md:block'>
           <section title='profile-info' className='w-full h-1/2 bg-teal-300'>
             <div className='w-full h-1/2 flex justify-center items-center p-2'>
-              <img src="/userProfiles/default.png" alt="user profile picture" className='rounded-full max-w-full max-h-full' />
+              <img src={`/userProfiles/${userData.profilePic}`} alt="user profile picture" className='rounded-full max-w-full max-h-full' />
             </div>
             <div className='w-full h-1/2 p-2 flex flex-col justify-center items-center gap-2'>
               <section className='w-full px-5 h-1/3 rounded-3xl flex justify-center items-center bg-emerald-500'>
-                <h3 title='Nombre de usuario'>Angel Romero</h3>
+                <h3 title='Nombre de usuario'>{userData.name} {userData.lastName}</h3>
               </section>
               <section className='w-full h-1/3 rounded-3xl flex justify-center items-center bg-fuchsia-400'>
-                <h3 title='Edad'>26</h3>
+                <h3 title='Edad'>{userData.birthdate}</h3>
               </section>
             </div>
           </section>
@@ -126,7 +148,7 @@ function AppNavbar () {
             <Link to={'NewData'} className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-2'>Cerrar sesión</Link>
           </section>
         </div>
-        <img onClick={handleNav} className='h-[40px] rounded-full md:hidden' src="/userProfiles/default.png" alt="user profile picture" />
+        <img onClick={handleNav} className='h-[40px] rounded-full md:hidden' src={`/userProfiles/${userData.profilePic}`} alt="user profile picture" />
         <div onClick={handleNav}>
           <img className='h-[30px] filter dark:invert md:hidden' src="/icons/menu.svg" alt="menu button" />
         </div>
@@ -134,8 +156,8 @@ function AppNavbar () {
       <div onClick={handleNav} className={!nav ? 'fixed left-0 top-0 w-screen h-screen bg-black opacity-40 z-10' : 'fixed bg-transparent left-0 top-0 w-screen h-screen duration-1000 -z-50'}></div>
       <div className={!nav ? 'fixed right-0 top-0 w-[300px] h-screen flex flex-col  border-gray-700 shadow-2xl dark:border-gray-200 bg-web-fondo dark:bg-web-formBgDarkMode duration-500 z-20' : 'fixed right-[-100%] top-0 w-[300px] h-screen flex flex-col duration-500 z-20'}>
         <img onClick={handleNav} className='h-5 self-end mr-3 mt-3 filter dark:invert' src="/icons/cancel.svg" alt="close menu button" />
-        <img className='rounded-full w-1/2 self-center' src="/userProfiles/default.png" alt="user profile picture" />
-        <p className='dark:text-gray-100 text-gray-900 text-center pt-2'>Angel Romero</p>
+        <img className='rounded-full w-1/2 self-center' src={`/userProfiles/${userData.profilePic}`} alt="user profile picture" />
+        <p className='dark:text-gray-100 text-gray-900 text-center pt-2'>{userData.name} {userData.lastName}</p>
         <ul className='p-4 dark:text-gray-100 text-gray-900'>
           <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to=''>Resumen</Link></li>
           <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to=''>Estadísticas</Link></li>
@@ -146,9 +168,9 @@ function AppNavbar () {
           <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to=''>Cerrar sesión</Link></li>
         </ul>
         <div className="flex gap-5 px-6">
-          <img className="social filter dark:invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/instagram.svg" alt="" />
-          <img className="social filter dark:invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/twitter.svg" alt="" />
-          <img className="social filter dark:invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/facebook.svg" alt="" />
+        <a href={SOCIAL.INSTAGRAM}><img className="social filter dark:invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/instagram.svg" alt="" /></a>
+          <a href={SOCIAL.TWITTER}><img className="social filter dark:invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/twitter.svg" alt="" /></a>
+          <a href={SOCIAL.FACEBOOK}><img className="social filter dark:invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/facebook.svg" alt="" /></a>
         </div>
       </div>
     </div>

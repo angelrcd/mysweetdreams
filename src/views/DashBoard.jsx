@@ -5,6 +5,7 @@ import { API } from '../../const'
 
 function Dashboard () {
   const [userData, setUserData] = useState([])
+  const [sleepData, setSleepData] = useState([])
 
   const options = {
     credentials: 'include',
@@ -15,17 +16,26 @@ function Dashboard () {
   }
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchUserData = async () => {
       const result = await fetch(API.USERS.MY_USER, options)
       const jsonResult = await result.json()
 
       setUserData(jsonResult)
     }
 
-    fetchData()
+    fetchUserData()
   }, [])
 
-  console.log(userData)
+  useEffect(() => {
+    const fetchSleepData = async () => {
+      const result = await fetch(API.SLEEP.ALL_DATA, options)
+      const jsonResult = await result.json()
+
+      setSleepData(jsonResult)
+    }
+
+    fetchSleepData()
+  }, [])
 
   return (
     <>
@@ -39,6 +49,8 @@ function Dashboard () {
             <li>Last-name: {userData.lastName}</li>
             <li>Email: {userData.email}</li>
             <li>Birthdate: {userData.birthdate}</li>
+            <li>Sleep data:</li>
+            <p>{JSON.stringify(sleepData)}</p>
           </ul>
         </div>
       </div>
