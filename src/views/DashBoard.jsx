@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../css/MainPage.css'
+import AppNavbar from '../components/AppNavBar'
 import { API } from '../../const'
 
 function Dashboard () {
@@ -28,6 +29,7 @@ function Dashboard () {
 
   return (
     <>
+      <AppNavbar />
       <h1 className='text-xl p-4'>{userData.email}</h1>
       <img className='rounded-full h-20' src={`/userProfiles/${userData.profilePic}`} alt="" />
       <ul className='px-4'>
