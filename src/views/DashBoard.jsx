@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../css/MainPage.css'
+import { API } from '../../const'
 
 function Dashboard () {
   const [userData, setUserData] = useState([])
@@ -14,7 +15,7 @@ function Dashboard () {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch('http://localhost:3000/users/myUser', { credentials: 'include' })
+      const result = await fetch(API.USERS.MY_USER, options)
       const jsonResult = await result.json()
 
       setUserData(jsonResult)
