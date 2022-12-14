@@ -3,6 +3,7 @@ import Input from './Input.jsx'
 import React, { useState } from 'react'
 import FormFooterText from './FormFooterText.jsx'
 import { useNavigate } from 'react-router-dom'
+import { isFormValid } from '../modules/isFormValid'
 import { API, EMAIL_REGEX, PSWD_REGEX } from '../../data'
 
 function FormLogin (props) {
@@ -28,7 +29,7 @@ function FormLogin (props) {
 
   // Hace un fetch si los campos del formulario son correctos
   function handleLogin (event) {
-    if (EMAIL_REGEX.test(email) && PSWD_REGEX.test(pswd)) {
+    if (isFormValid(email, EMAIL_REGEX) && isFormValid(pswd, PSWD_REGEX)) {
       event.preventDefault()
       fetch(API.AUTH, options)
         .then(response => response.text())

@@ -3,6 +3,7 @@ import Input from './Input.jsx'
 import FormFooterText from './FormFooterText.jsx'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { isFormValid } from '../modules/isFormValid'
 import { API, EMAIL_REGEX, PSWD_REGEX } from '../../data'
 
 function FormSignup (props) {
@@ -32,7 +33,7 @@ function FormSignup (props) {
 
   // Hace un fetch si los campos del formulario son correctos
   function handleRegister (event) {
-    if (EMAIL_REGEX.test(email) && PSWD_REGEX.test(pswd) && repeatPswd === pswd) {
+    if (isFormValid(email, EMAIL_REGEX) && isFormValid(pswd, PSWD_REGEX) && repeatPswd === pswd) {
       event.preventDefault()
       fetch(API.USERS.ADD, options)
         .then(response => response.text())

@@ -3,7 +3,7 @@ import Input from './Input.jsx'
 import FormFooterText from './FormFooterText.jsx'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import moment from 'moment/moment'
+import { IsFormNewUserValid } from '../modules/isFormValid'
 import { API } from '../../data'
 
 function FormNewUser (props) {
@@ -28,17 +28,8 @@ function FormNewUser (props) {
     body: JSON.stringify(jsonData)
   }
 
-  function areFormsValid () {
-    const isNameValid = (name.length >= 3 && name.length <= 20)
-    const isLastNameValid = (lastName.length >= 3 && lastName.length <= 20)
-    const isBirthdateValid = moment(birthdate).isValid() &&
-      moment(birthdate).isAfter(moment('1900-01-01')) &&
-      moment(birthdate).isBefore(moment('2020-01-01'))
-    return isNameValid && isLastNameValid && isBirthdateValid
-  }
-
   function handleNewData (event) {
-    if (areFormsValid()) {
+    if (IsFormNewUserValid(name, lastName, birthdate)) {
       event.preventDefault()
       fetch(API.USERS.MY_USER, options)
         .then(response => response.text())
@@ -50,14 +41,14 @@ function FormNewUser (props) {
               console.log('ERROR')
               break
             default:
-              linkToDashboard(data)
+              redirectToDashboard(data)
               break
           }
         })
     }
   }
 
-  function linkToDashboard (data) {
+  function redirectToDashboard (data) {
     return navigate('/dashboard')
   }
 
