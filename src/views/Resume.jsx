@@ -11,7 +11,7 @@ function helloWorld (value, event) {
 
 function Resume () {
   return (
-        <main className='w-5/6 h-full grid grid-cols-2 grid-rows-2 '>
+        <main className='w-full h-screen grid grid-cols-2 grid-rows-2 '>
             <div className='w-full h-full flex justify-center items-center bg-blue-600'>
               <Grafica />
             </div>
