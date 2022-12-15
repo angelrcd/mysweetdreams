@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { API, SOCIAL } from '../../data'
 import { enableScroll, disableScroll } from '../modules/disableEnableScroll'
+import { useGetUserData } from '../modules/useGetUserData'
+import AppNavBarLoading from './AppNavBarLoading'
 
 function AppNavbar () {
   // Detecta si el menu de movil esta abierto
@@ -12,26 +14,8 @@ function AppNavbar () {
   // Detecta si el último scroll fue hacia arriba o hacia abajo
   const [lastScrollY, setLastScrollY] = useState(0)
 
-  const [userData, setUserData] = useState([])
-
-  const options = {
-    credentials: 'include',
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  }
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await fetch(API.USERS.MY_USER, options)
-      const jsonResult = await result.json()
-
-      setUserData(jsonResult)
-    }
-
-    fetchData()
-  }, [])
+  const { userData, isLoading, error } = useGetUserData()
+  console.log(isLoading)
 
   const handleNav = () => {
     setNav(!nav)
@@ -41,12 +25,8 @@ function AppNavbar () {
     if (typeof window !== 'undefined') {
       if (window.scrollY > lastScrollY) { // si scroll hacia abajo esconde la navbar
         setShow(false)
-        console.log(show)
-        console.log(window.scrollY)
       } else { // si scroll hacia arriba muestra la navbar
         setShow(true)
-        console.log(show)
-        console.log(window.scrollY)
       }
 
       // recuerda la localización actual para usarla en el próximo movimiento
@@ -81,6 +61,10 @@ function AppNavbar () {
 
   function setYTo0 () {
     window.scrollTo(0, 0)
+  }
+
+  if (isLoading) {
+    return <AppNavBarLoading />
   }
 
   return (
