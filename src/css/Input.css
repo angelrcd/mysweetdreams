@@ -1,28 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@font-face {
-  font-family: bluetea;
-  src:
-    url("/fonts/bluetea.otf") format("otf"),
-    url("/fonts/bluetea.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
+input:not(:placeholder-shown) {
+  outline: 2px solid #f87171;
+  outline-offset: 2px;
+  background-image: url("/icons/incorrect.svg");
+  background-size: 15px;
+  background-position: 99% 10%;
+  background-repeat: no-repeat;
 }
 
-@font-face {
-  font-family: caveat;
-  src:
-    url("/fonts/Caveat.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
+input:not(:focus)[type="date"]{
+  outline: 2px solid transparent;
+  background-image: none;
+}
+input:not(:focus)[type="file"]{
+  outline: 2px solid transparent;
+  background-image: none;
 }
 
-@font-face {
-  font-family: quicksand;
-  src:
-    url("/fonts/Quicksand.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
+input:required:valid {
+  background-image: url("/icons/correct.svg");
+  outline: 2px solid #79b5f3;
+  background-size: 15px;
+  background-position: 99% 10%;
+  background-repeat: no-repeat;
+}
+
+@media (prefers-color-scheme: dark) {
+  input[type="date"]::-webkit-calendar-picker-indicator { 
+    filter: invert(1);
+  }
 }

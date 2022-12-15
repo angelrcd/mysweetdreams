@@ -19,11 +19,36 @@
   src: url('../fonts/Caveat.ttf');
 }
 
+@layer components {
+  .button-web {
+    @apply font-quicksand font-bold w-fit px-4 sm:px-10 py-2 text-lg sm:text-2xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-2xl sm:rounded-full mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton;
+  }
+  .navVisible {
+    @apply fixed duration-300;
+  }
+  .navNotVisible {
+    @apply fixed translate-y-[-100%] md:translate-y-[0%] duration-300;
+  }
+  .AppNavVisible {
+    @apply fixed md:sticky md:top-0 duration-300;
+  }
+  .AppNavNotVisible {
+    @apply fixed md:sticky md:top-0 translate-y-[-100%] md:translate-y-[0%] duration-300;
+  }
+}
+
 .text-shadow-2 {
   text-shadow: -2px 2px 0 #000,
   2px 2px 0 #000,
  2px -2px 0 #000,
 -2px -2px 0 #000;
+}
+
+.text-shadow-2-dark {
+  text-shadow: -2px 2px 0 #fff,
+  2px 2px 0 #fff,
+ 2px -2px 0 #fff,
+-2px -2px 0 #fff;
 }
 
 .text-shadow-1 {

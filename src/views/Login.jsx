@@ -1,14 +1,17 @@
-import '../css/Login.css'
+import '../css/MainPage.css'
 import Navbar from '../components/Navbar.jsx'
-import ContentLogin from '../components/ContentLogin.jsx'
-import React, { useState } from 'react'
+import FormLogin from '../components/FormLogin'
 
 function Login () {
   return (
-    <div className="flex flex-col">
-      <Navbar background="bg-[#1b2950]"/>
-      <ContentLogin />
-    </div>
+    <>
+      <div className="bg-fixed bg-cover bg-center bg-[url('/img/background-night.jpg')] h-screen flex flex-col items-center">
+        <div className='w-screen'>
+          <Navbar />
+        </div>
+        <FormLogin id="form-signup" />
+      </div>
+    </>
   )
 }
 

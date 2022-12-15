@@ -1,20 +1,22 @@
 import './index.css'
-import Signup from './views/Signup'
 import MainPage from './views/MainPage.jsx'
-import Login from './views/Login.jsx'
-import { Route, Routes } from 'react-router-dom'
+import UserDataForm from './views/UserDataForm.jsx'
 import Who from './views/Who'
-import Dashboard from './views/Dashboard'
+import Signup from './views/Signup.jsx'
+import Login from './views/Login.jsx'
+import Dashboard from './views/DashBoard'
+import { Routes, Route } from 'react-router-dom'
 
 function App () {
   return (
     <div className='App'>
       <Routes>
         <Route path='/' element={<MainPage />}/>
-        <Route path='/Login' element={<Login />}/>
-        <Route path='/Signup' element={<Signup />}/>
-        <Route path='/Who' element={<Who />}/>
-        <Route path='/App/*' element={<Dashboard />}/>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/signup' element={<Signup />}/>
+        <Route path='/who' element={<Who />}/>
+        <Route path='/new-user-form' element={<UserDataForm />}/>
+        <Route path='/app/*' element={<Dashboard />}/>
       </Routes>
     </div>
   )
