@@ -3,7 +3,8 @@ import Input from './Input.jsx'
 import FormFooterText from './FormFooterText.jsx'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { API, EMAIL_REGEX, PSWD_REGEX } from '../../const'
+import { isFormValid } from '../modules/isFormValid'
+import { API, EMAIL_REGEX, PSWD_REGEX } from '../../data'
 
 function FormSignup (props) {
   const [email, setEmail] = useState('')
@@ -32,7 +33,7 @@ function FormSignup (props) {
 
   // Hace un fetch si los campos del formulario son correctos
   function handleRegister (event) {
-    if (EMAIL_REGEX.test(email) && PSWD_REGEX.test(pswd) && repeatPswd === pswd) {
+    if (isFormValid(email, EMAIL_REGEX) && isFormValid(pswd, PSWD_REGEX) && repeatPswd === pswd) {
       event.preventDefault()
       fetch(API.USERS.ADD, options)
         .then(response => response.text())
@@ -64,7 +65,7 @@ function FormSignup (props) {
             <Input value={pswd} onInput={ev => setPswd(ev.target.value)} header="Contraseña" id="password" type="password" placeholder="Introduzca contraseña" title="La contraseña debe tener al menos 8 caracteres, y al menos una mayúscula, número y caracter especial" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" />
             <Input value={repeatPswd} onInput={ev => setRepeatPswd(ev.target.value)} header="Repetir Contraseña" id="validatePassword" type="password" pattern={repeatPasswordRegex} placeholder="Vuelva a introducir su contraseña" title="Las contraseñas deben coincidir" />
           </fieldset>
-          <button onClick={handleRegister} type="submit" className="mx-auto mt-6 button-web">Registrarse</button>
+          <button onClick={handleRegister} type="submit" className="mx-auto mt-6 button-web bg-web-boton">Registrarse</button>
         </form>
         <FormFooterText text="¿Ya tienes cuenta?" linkText="Inicia sesión aquí" redirectTo="/login" />
     </>

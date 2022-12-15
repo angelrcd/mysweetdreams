@@ -1,5 +1,5 @@
 import '../css/MainPage.css'
-import { SOCIAL } from '../../const'
+import { SOCIAL } from '../../data'
 
 function Footer () {
   return (

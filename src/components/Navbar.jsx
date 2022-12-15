@@ -1,12 +1,13 @@
 import '../css/MainPage.css'
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { LANDING_URL, SOCIAL } from '../../const'
+import { LANDING_URL, SOCIAL } from '../../data'
+import { disableScroll, enableScroll } from '../modules/disableEnableScroll'
 
 function Navbar () {
   // Detecta si el menu de movil esta abierto
   const [nav, setNav] = useState(true)
-  // Detecta si la barra esta visible o no, cambia al hacer scroll
+  // Detecta si la barra de movil esta visible o no, cambia al hacer scroll
   const [show, setShow] = useState(true)
   // Detecta si el último scroll fue hacia arriba o hacia abajo
   const [lastScrollY, setLastScrollY] = useState(0)
@@ -56,46 +57,6 @@ function Navbar () {
       enableScroll()
     }
   }, [nav])
-
-  // left: 37, up: 38, right: 39, down: 40,
-  // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-  const keys = { 37: 1, 38: 1, 39: 1, 40: 1 }
-
-  function preventDefault (e) {
-    e.preventDefault()
-  }
-
-  function preventDefaultForScrollKeys (e) {
-    if (keys[e.keyCode]) {
-      preventDefault(e)
-      return false
-    }
-  }
-
-  // modern Chrome requires { passive: false } when adding event
-  let supportsPassive = false
-  try {
-    window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
-      get: function () { supportsPassive = true }
-    }))
-  } catch (e) {}
-
-  const wheelOpt = supportsPassive ? { passive: false } : false
-  const wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel'
-
-  function disableScroll () {
-    window.addEventListener('DOMMouseScroll', preventDefault, false) // older FF
-    window.addEventListener(wheelEvent, preventDefault, wheelOpt) // modern desktop
-    window.addEventListener('touchmove', preventDefault, wheelOpt) // mobile
-    window.addEventListener('keydown', preventDefaultForScrollKeys, false)
-  }
-
-  function enableScroll () {
-    window.removeEventListener('DOMMouseScroll', preventDefault, false)
-    window.removeEventListener(wheelEvent, preventDefault, wheelOpt)
-    window.removeEventListener('touchmove', preventDefault, wheelOpt)
-    window.removeEventListener('keydown', preventDefaultForScrollKeys, false)
-  }
 
   function setYTo0 () {
     window.scrollTo(0, 0)
