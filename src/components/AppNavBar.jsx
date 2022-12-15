@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { API, SOCIAL } from '../../data'
 import { enableScroll, disableScroll } from '../modules/disableEnableScroll'
 import { useGetUserData } from '../modules/useGetUserData'
-import AppNavBarLoading from './AppNavBarLoading'
 
 function AppNavbar () {
   // Detecta si el menu de movil esta abierto
@@ -64,7 +63,7 @@ function AppNavbar () {
   }
 
   if (isLoading) {
-    return <AppNavBarLoading />
+    return <div>Cargando...</div>
   }
 
   return (

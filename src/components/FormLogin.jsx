@@ -47,7 +47,7 @@ function FormLogin (props) {
   }
 
   function redirectToDashboard (data) {
-    return navigate('/app')
+    return navigate('/app/resume')
   }
 
   return (
@@ -57,7 +57,7 @@ function FormLogin (props) {
             <Input value={email} onInput={ev => setEmail(ev.target.value)} header="Email" id="email" type="email" placeholder="Introduzca email" />
             <Input value={pswd} title="La contraseña debe tener al menos 8 caracteres, y al menos una mayúscula, número y caracter especial" onInput={ev => setPswd(ev.target.value)} header="Contraseña" id="password" type="password" placeholder="Introduzca contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" />
           </fieldset>
-          <button onClick={handleLogin} type="submit" className="mx-auto mt-6 button-web">Iniciar sesión</button>
+          <button onClick={handleLogin} type="submit" className="mx-auto mt-6 button-web bg-web-boton">Iniciar sesión</button>
         </form>
         <FormFooterText text="¿Aún no tienes cuenta?" linkText="Registrate aquí" redirectTo="/signup" />
     </>
