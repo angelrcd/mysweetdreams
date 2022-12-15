@@ -2,7 +2,7 @@ import '../css/NewData.css'
 
 function NewData () {
   return (
-    <main className='w-5/6 h-full flex flex-col'>
+    <main className='w-full h-screen flex flex-col'>
         <div className='w-full h-1/3 p-5 bg-blue-300'>
             <h1>Añadir datos</h1>
             <div className='w-full h-28 pt-1 flex justify-around items-center gap-2'>

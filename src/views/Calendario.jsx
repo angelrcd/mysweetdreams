@@ -21,7 +21,7 @@ function Calendario () {
   }, [])
 
   return (
-        <main className='w-5/6 h-full grid grid-cols-2 grid-rows-2'>
+        <main className='w-full h-screen grid grid-cols-2 grid-rows-2'>
           <Calendar className="w-full h-full" />
           <div className='w-full h-full flex flex-col justify-around items-center  row-span-3 p-4'>
             <section className='w-full h-1/6 flex justify-center items-center border-solid border-black border-2'>
