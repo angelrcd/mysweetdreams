@@ -58,7 +58,6 @@ function FormNewUser (props) {
   }
 
   function linkToDashboard (data) {
-    console.log(data)
     return navigate('/app')
   }
 

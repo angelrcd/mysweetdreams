@@ -33,7 +33,6 @@ function FormSignup (props) {
   // Hace un fetch si los campos del formulario son correctos
   function handleRegister (event) {
     if (EMAIL_REGEX.test(email) && PSWD_REGEX.test(pswd) && repeatPswd === pswd) {
-      console.log(jsonData)
       event.preventDefault()
       fetch(API.USERS.ADD, options)
         .then(response => response.text())
@@ -43,7 +42,6 @@ function FormSignup (props) {
             case 'Incorrect user/password':
             case 'User already exists':
             case 'Missing user':
-              console.log(data)
               alert('Usuario o contraseña inválidos')
               break
             default:
@@ -55,8 +53,7 @@ function FormSignup (props) {
   }
 
   function redirectToNewUserForm (data) {
-    console.log(data)
-    // return navigate('/new-user-form')
+    return navigate('/new-user-form')
   }
 
   return (
