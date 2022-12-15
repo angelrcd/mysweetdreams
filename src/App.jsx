@@ -4,7 +4,7 @@ import UserDataForm from './views/UserDataForm.jsx'
 import Who from './views/Who'
 import Signup from './views/Signup.jsx'
 import Login from './views/Login.jsx'
-import Dashboard from './views/DashBoard'
+import Dashboard from './views/Dashboard'
 import { Routes, Route } from 'react-router-dom'
 
 function App () {
@@ -16,7 +16,7 @@ function App () {
         <Route path='/signup' element={<Signup />}/>
         <Route path='/who' element={<Who />}/>
         <Route path='/new-user-form' element={<UserDataForm />}/>
-        <Route path='/dashboard' element={<Dashboard />}/>
+        <Route path='/app/*' element={<Dashboard />}/>
       </Routes>
     </div>
   )

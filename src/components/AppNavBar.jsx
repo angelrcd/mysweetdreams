@@ -85,12 +85,12 @@ function AppNavbar () {
             </div>
           </section>
           <section title='settings' className='w-full h-1/2 flex flex-col cursor-pointer bg-pink-400'>
-            <Link to={'Resume'} className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Resumen</Link>
-            <Link to={'Estadisticas'} className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Estadísticas</Link>
-            <Link to={'Calendario'} className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Calendario</Link>
-            <Link to={'Tips'} className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Consejos</Link>
-            <Link to={'NewData'} className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-2'>Añadir datos</Link>
-            <Link to={'NewData'} className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-2'>Cerrar sesión</Link>
+            <Link to='resume' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Resumen</Link>
+            <Link to='stats' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Estadísticas</Link>
+            <Link to='calendar' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Calendario</Link>
+            <Link to='tips' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Consejos</Link>
+            <Link to='newData' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Añadir datos</Link>
+            <Link to='newData' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-2'>Cerrar sesión</Link>
           </section>
         </div>
         <img onClick={handleNav} className='h-[40px] rounded-full md:hidden' src={`/userProfiles/${userData.profilePic}`} alt="user profile picture" />
@@ -104,13 +104,12 @@ function AppNavbar () {
         <img className='rounded-full w-1/2 self-center' src={`/userProfiles/${userData.profilePic}`} alt="user profile picture" />
         <p className='dark:text-gray-100 text-gray-900 text-center pt-2'>{userData.name} {userData.lastName}</p>
         <ul className='p-4 dark:text-gray-100 text-gray-900'>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to=''>Resumen</Link></li>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to=''>Estadísticas</Link></li>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to=''>Calendario</Link></li>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to=''>Consejos</Link></li>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to=''>Añadir datos</Link></li>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to=''>Modificar datos</Link></li>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to=''>Cerrar sesión</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='resume'>Resumen</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='stats'>Estadísticas</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='calendar'>Calendario</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='tips'>Consejos</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='newData'>Añadir datos</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='newData'>Cerrar sesión</Link></li>
         </ul>
         <div className="flex gap-5 px-6">
         <a href={SOCIAL.INSTAGRAM}><img className="social filter dark:invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/instagram.svg" alt="" /></a>

@@ -49,7 +49,7 @@ function FormNewUser (props) {
   }
 
   function redirectToDashboard (data) {
-    return navigate('/dashboard')
+    return navigate('/app')
   }
 
   return (

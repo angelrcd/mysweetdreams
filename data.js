@@ -1,5 +1,16 @@
 export const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+export const EMAIL_REGEX_2 = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+/**
+       * Password rules
+       * It should be at least 8 characters long [0 to 9]
+       * It must have a number It must have a capital alphabet [A to Z]
+       * It must have a small alphabet [a to z]
+       * It must have a special character [!, @, #, $, %, ^, &, *]
+       */
 export const PSWD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/
+
+export const PSW_REGEX_2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/
 
 export const LANDING_URL = 'http://localhost:5173/'
 // export const LANDING_URL = 'https://mysweetdreams.es'
@@ -29,3 +40,8 @@ export const SOCIAL = {
   TWITTER: 'https://twitter.com/mySweetDreamsAp',
   INSTAGRAM: 'https://www.instagram.com/mysweetdreamsapp/'
 }
+
+console.log(EMAIL_REGEX.test('aaa@aaaa'))
+console.log(EMAIL_REGEX_2.test('aaa@aaaa.es'))
+console.log(PSWD_REGEX.test('Holaaawe2!a'))
+console.log(PSW_REGEX_2.test('Hola12!a'))
