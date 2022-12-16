@@ -1,7 +1,8 @@
 import '../css/MainPage.css'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { API, SOCIAL } from '../../data'
+import UploadPicButton from './UploadPicButton'
 import { enableScroll, disableScroll } from '../modules/disableEnableScroll'
 import { useGetUserData } from '../modules/useGetUserData'
 
@@ -14,6 +15,7 @@ function AppNavbar () {
   const [lastScrollY, setLastScrollY] = useState(0)
 
   const { userData, isLoading, error } = useGetUserData()
+  const [image, setImage] = useState('/userProfiles/default.png')
   console.log(isLoading)
 
   const handleNav = () => {
@@ -62,6 +64,19 @@ function AppNavbar () {
     window.scrollTo(0, 0)
   }
 
+  const fileInput = useRef()
+  const selectFile = () => {
+    fileInput.current.click()
+  }
+
+  const onImageChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      setImage(URL.createObjectURL(event.target.files[0]))
+    }
+    // fs.writeFileSync(file, '/userProfiles')
+    // fs.writeFile('hola', '/userProfiles/hola.txt')
+  }
+
   if (isLoading) {
     return <div>Cargando...</div>
   }
@@ -71,10 +86,14 @@ function AppNavbar () {
       <nav className={`${show ? 'AppNavVisible' : 'AppNavNotVisible'} z-10 w-screen md:w-1/6 md:min-w-[300px] h-10 md:h-screen border-b flex md:flex-col justify-between items-center md:items-start px-4 md:px-0 text-black  bg-white md:bg-red-300 dark:bg-web-formBgDarkMode`}>
         <div className='w-full h-full hidden md:block'>
           <section title='profile-info' className='w-full h-1/2 bg-teal-300'>
-            <div className='w-full h-1/2 flex justify-center items-center p-2'>
-              <img src={`/userProfiles/${userData.profilePic}`} alt="user profile picture" className='rounded-full max-w-full max-h-full' />
+            <div className='w-full h-[300px] flex flex-col justify-center items-center p-2'>
+              <img src={image} alt="user profile picture" className='rounded-full h-[220px] w-[220px]' />
+              <input className='hidden' type="file" ref={fileInput} onChange={onImageChange} />
+              <span onClick={selectFile}>
+                <UploadPicButton />
+              </span>
             </div>
-            <div className='w-full h-1/2 p-2 flex flex-col justify-center items-center gap-2'>
+            <div className='relative bottom-8 w-full h-1/2 p-2 flex flex-col justify-center items-center gap-2'>
               <section className='w-full px-5 h-1/3 rounded-3xl flex justify-center items-center bg-emerald-500'>
                 <h3 title='Nombre de usuario'>{userData.name} {userData.lastName}</h3>
               </section>
