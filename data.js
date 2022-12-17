@@ -13,6 +13,7 @@ export const PSWD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$
 export const PSW_REGEX_2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/
 
 export const LANDING_URL = 'http://localhost:5173/'
+export const IMAGE_FOLDER = 'https://img.mysweetdreams.es/img/pfp/'
 // export const LANDING_URL = 'https://mysweetdreams.es'
 const API_URL = 'http://localhost:3000'
 // const API_URL = 'https://api.mysweetdreams.es'

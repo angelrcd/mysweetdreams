@@ -13,9 +13,10 @@ function AppNavbar () {
   const [show, setShow] = useState(true)
   // Detecta si el último scroll fue hacia arriba o hacia abajo
   const [lastScrollY, setLastScrollY] = useState(0)
-
   const { userData, isLoading, error } = useGetUserData()
   const [image, setImage] = useState('/userProfiles/default.png')
+  const [index, setIndex] = useState(0)
+
   console.log(isLoading)
 
   const handleNav = () => {
@@ -82,33 +83,33 @@ function AppNavbar () {
   }
 
   return (
-    <div>
-      <nav className={`${show ? 'AppNavVisible' : 'AppNavNotVisible'} z-10 w-screen md:w-1/6 md:min-w-[300px] h-10 md:h-screen border-b flex md:flex-col justify-between items-center md:items-start px-4 md:px-0 text-black  bg-white md:bg-red-300 dark:bg-web-formBgDarkMode`}>
+    <div className='text-gray-900 dark:text-gray-200'>
+      <nav className={`${show ? 'AppNavVisible' : 'AppNavNotVisible'} z-10 shadow-md w-screen md:w-1/6 md:min-w-[300px] h-10 md:h-screen flex md:flex-col border-r-2 border-black justify-between items-center md:items-start px-4 md:px-0`}>
         <div className='w-full h-full hidden md:block'>
-          <section title='profile-info' className='w-full h-1/2 bg-teal-300'>
+          <section className='w-full h-1/2 bg-web-fondo dark:bg-web-formBgDarkMode'>
             <div className='w-full h-[300px] flex flex-col justify-center items-center p-2'>
-              <img src={image} alt="user profile picture" className='rounded-full h-[220px] w-[220px]' />
+              <img title="Foto de perfil de usuario" src={image} alt="user profile picture" className='rounded-full h-[220px] w-[220px] border-2 border-black object-cover' />
               <input className='hidden' type="file" ref={fileInput} onChange={onImageChange} />
               <span onClick={selectFile}>
                 <UploadPicButton />
               </span>
             </div>
-            <div className='relative bottom-8 w-full h-1/2 p-2 flex flex-col justify-center items-center gap-2'>
-              <section className='w-full px-5 h-1/3 rounded-3xl flex justify-center items-center bg-emerald-500'>
+            <div className='relative w-full h-fit p-2 flex flex-col justify-center items-center gap-2'>
+              <section className='w-full px-5 h-200px rounded-3xl flex justify-center items-center bg-transparent shadow-md'>
                 <h3 title='Nombre de usuario'>{userData.name} {userData.lastName}</h3>
               </section>
-              <section className='w-full h-1/3 rounded-3xl flex justify-center items-center bg-fuchsia-400'>
+              <section className='w-full h-100px rounded-3xl flex justify-center items-center bg-transparent shadow-md'>
                 <h3 title='Edad'>{userData.birthdate}</h3>
               </section>
             </div>
           </section>
-          <section title='settings' className='w-full h-1/2 flex flex-col cursor-pointer bg-pink-400'>
-            <Link to='resume' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Resumen</Link>
-            <Link to='stats' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Estadísticas</Link>
-            <Link to='calendar' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Calendario</Link>
-            <Link to='tips' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Consejos</Link>
-            <Link to='newData' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Añadir datos</Link>
-            <Link to='newData' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-2'>Cerrar sesión</Link>
+          <section title='settings' className='w-full h-1/2 flex flex-col items-center cursor-pointer bg-web-fondo dark:bg-web-formBgDarkMode'>
+            <Link onClick={() => setIndex(0)} to='resume' className='w-5/6 h-1/6 flex justify-center items-center text-xl border-y-2 border-gray-600'><div className={`${index === 0 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Resumen</div></Link>
+            <Link onClick={() => setIndex(1)} to='stats' className='w-5/6 h-1/6 flex justify-center items-center text-xl border-b-2 border-gray-600'><div className={`${index === 1 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Estadísticas</div></Link>
+            <Link onClick={() => setIndex(2)} to='calendar' className='w-5/6 h-1/6 flex justify-center items-center text-xl border-b-2 border-gray-600'><div className={`${index === 2 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Calendario</div></Link>
+            <Link onClick={() => setIndex(3)} to='tips' className='w-5/6 h-1/6 flex justify-center items-center text-xl border-b-2 border-gray-600'><div className={`${index === 3 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Consejos</div></Link>
+            <Link onClick={() => setIndex(4)} to='newData' className='w-5/6 h-1/6 flex justify-center items-center text-xl border-b-2 border-gray-600'><div className={`${index === 4 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Añadir datos</div></Link>
+            <Link onClick={() => setIndex(5)} to='newData' className='w-5/6 h-1/6 flex justify-center items-center text-xl'><div className={`${index === 5 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Cerrar sesión</div></Link>
           </section>
         </div>
         <img onClick={handleNav} className='h-[40px] rounded-full md:hidden' src={`/userProfiles/${userData.profilePic}`} alt="user profile picture" />
