@@ -5,6 +5,7 @@ import { API, SOCIAL } from '../../data'
 import UploadPicButton from './UploadPicButton'
 import { enableScroll, disableScroll } from '../modules/disableEnableScroll'
 import { useGetUserData } from '../modules/useGetUserData'
+import { Oval } from 'react-loader-spinner'
 
 function AppNavbar () {
   // Detecta si el menu de movil esta abierto
@@ -78,22 +79,40 @@ function AppNavbar () {
     // fs.writeFile('hola', '/userProfiles/hola.txt')
   }
 
-  if (isLoading) {
-    return <div>Cargando...</div>
-  }
+  const profileUserInfo = (
+    <div className='w-full h-[300px] flex flex-col justify-center items-center p-2'>
+      <img title="Foto de perfil de usuario" src={image} alt="user profile picture" className='rounded-full h-[220px] w-[220px] border-2 border-black object-cover' />
+      <input className='hidden' type="file" ref={fileInput} onChange={onImageChange} />
+      <span onClick={selectFile}>
+        <UploadPicButton />
+      </span>
+    </div>
+  )
+
+  const profileUserLoading = (
+    <div className='w-full h-[300px] flex flex-col justify-center items-center p-2'>
+      <Oval
+        height={220}
+        width={220}
+        color="#60a5fa"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        ariaLabel='oval-loading'
+        secondaryColor="60a5fa"
+        strokeWidth={2}
+        strokeWidthSecondary={2}
+
+      />
+    </div>
+  )
 
   return (
     <div className='text-gray-900 dark:text-gray-200'>
-      <nav className={`${show ? 'AppNavVisible' : 'AppNavNotVisible'} z-10 shadow-md w-screen md:w-1/6 md:min-w-[300px] h-10 md:h-screen flex md:flex-col border-r-2 border-black justify-between items-center md:items-start px-4 md:px-0`}>
+      <nav className={`${show ? 'AppNavVisible' : 'AppNavNotVisible'} z-10 shadow-md w-screen md:w-1/6 md:min-w-[300px] h-10 md:h-screen flex md:flex-col border-r-2 border-black bg-web-fondo dark:bg-web-formBgDarkMode justify-between items-center md:items-start px-4 md:px-0`}>
         <div className='w-full h-full hidden md:block'>
           <section className='w-full h-1/2 bg-web-fondo dark:bg-web-formBgDarkMode'>
-            <div className='w-full h-[300px] flex flex-col justify-center items-center p-2'>
-              <img title="Foto de perfil de usuario" src={image} alt="user profile picture" className='rounded-full h-[220px] w-[220px] border-2 border-black object-cover' />
-              <input className='hidden' type="file" ref={fileInput} onChange={onImageChange} />
-              <span onClick={selectFile}>
-                <UploadPicButton />
-              </span>
-            </div>
+            {isLoading ? profileUserLoading : profileUserInfo}
             <div className='relative w-full h-fit p-2 flex flex-col justify-center items-center gap-2'>
               <section className='w-full px-5 h-200px rounded-3xl flex justify-center items-center bg-transparent shadow-md'>
                 <h3 title='Nombre de usuario'>{userData.name} {userData.lastName}</h3>
@@ -112,7 +131,7 @@ function AppNavbar () {
             <Link onClick={() => setIndex(5)} to='newData' className='w-5/6 h-1/6 flex justify-center items-center text-xl'><div className={`${index === 5 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Cerrar sesión</div></Link>
           </section>
         </div>
-        <img onClick={handleNav} className='h-[40px] rounded-full md:hidden' src={`/userProfiles/${userData.profilePic}`} alt="user profile picture" />
+        <img onClick={handleNav} className='h-[40px] w-[40px] rounded-full md:hidden object-cover' src={image} alt="user profile picture" />
         <div onClick={handleNav}>
           <img className='h-[30px] filter dark:invert md:hidden' src="/icons/menu.svg" alt="menu button" />
         </div>
