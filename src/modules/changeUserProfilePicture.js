@@ -17,10 +17,12 @@ export function uploadPicToServer (picture, userId) {
   const blob = picture.slice(0, picture.size, 'image/png')
   const newFile = new File([blob], userId + '.png', { type: 'image/png' })
   const options = {
+    mode: 'cors',
     credentials: 'include',
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     },
     body: picture
   }
