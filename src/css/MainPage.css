@@ -27,7 +27,13 @@
     @apply fixed duration-300;
   }
   .navNotVisible {
-    @apply fixed translate-y-[-100%] duration-300;
+    @apply fixed translate-y-[-100%] md:translate-y-[0%] duration-300;
+  }
+  .AppNavVisible {
+    @apply fixed md:sticky md:top-0 duration-300;
+  }
+  .AppNavNotVisible {
+    @apply fixed md:sticky md:top-0 translate-y-[-100%] md:translate-y-[0%] duration-300;
   }
 }
 

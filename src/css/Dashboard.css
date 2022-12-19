@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Quicksand';
+    font-weight: 400;
+    src: url('../fonts/Quicksand.ttf');
+}
+
+@font-face {
+    font-family: 'Caveat';
+    font-weight: 600;
+    src: url('../fonts/Caveat.ttf');
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    font-weight: 400;
+    src: url('../fonts/Urbanist.ttf');
+}

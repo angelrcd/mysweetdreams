@@ -1,36 +1,30 @@
-import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import '../css/MainPage.css'
+import AppNavbar from '../components/AppNavBar'
+import { API } from '../../data'
+import { useGetUserData } from '../modules/useGetUserData'
 
 function Dashboard () {
-  const [userData, setUserData] = useState([])
-  const params = useParams()
-  const userId = params.id
-  const APIUrl = 'http://localhost:3000/users/' + userId
+  const { userData, isLoading, error } = useGetUserData()
+  // const [sleepData, setSleepData] = useState([])
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await fetch(APIUrl)
-      const jsonResult = await result.json()
+  // useEffect(() => {
+  //   const fetchSleepData = async () => {
+  //     const result = await fetch(API.SLEEP.ALL_DATA, options)
+  //     const jsonResult = await result.json()
 
-      setUserData(jsonResult)
-    }
+  //     setSleepData(jsonResult)
+  //   }
 
-    fetchData()
-  }, [])
-
-  console.log(userData)
+  //   fetchSleepData()
+  // }, [])
 
   return (
     <>
-      <h1 className='text-xl p-4'>Dashboard con ID: {userId}</h1>
-      <img className='rounded-full h-20' src={`/userProfiles/${userData.profilePic}`} alt="" />
-      <ul className='px-4'>
-        <li>Name: {userData.name}</li>
-        <li>Last-name: {userData.lastName}</li>
-        <li>Email: {userData.email}</li>
-        <li>Birthdate: {userData.birthdate}</li>
-      </ul>
+      <div className='bg-slate-800 bg-fixed text-gray-200 flex'>
+        <AppNavbar />
+
+      </div>
     </>
   )
 }
