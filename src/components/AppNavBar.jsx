@@ -1,9 +1,10 @@
 import '../css/MainPage.css'
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect, useRef } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { API, SOCIAL } from '../../data'
+import UserInfo from './UserInfo'
 import { enableScroll, disableScroll } from '../modules/disableEnableScroll'
-import { useGetUserData } from '../modules/useGetUserData'
+import { logout } from '../modules/logout'
 
 function AppNavbar () {
   // Detecta si el menu de movil esta abierto
@@ -12,9 +13,8 @@ function AppNavbar () {
   const [show, setShow] = useState(true)
   // Detecta si el último scroll fue hacia arriba o hacia abajo
   const [lastScrollY, setLastScrollY] = useState(0)
-
-  const { userData, isLoading, error } = useGetUserData()
-  console.log(isLoading)
+  const [index, setIndex] = useState(0)
+  const navigate = useNavigate()
 
   const handleNav = () => {
     setNav(!nav)
@@ -62,37 +62,30 @@ function AppNavbar () {
     window.scrollTo(0, 0)
   }
 
-  if (isLoading) {
-    return <div>Cargando...</div>
+  async function handleLogout () {
+    const logoutResponse = await logout()
+    if (logoutResponse === 'OK') {
+      return navigate('/login')
+    } else {
+      alert('Ha ocurrido algun error al cerrar sesión')
+    }
   }
 
   return (
-    <div>
-      <nav className={`${show ? 'AppNavVisible' : 'AppNavNotVisible'} z-10 w-screen md:w-1/6 md:min-w-[300px] h-10 md:h-screen border-b flex md:flex-col justify-between items-center md:items-start px-4 md:px-0 text-black  bg-white md:bg-red-300 dark:bg-web-formBgDarkMode`}>
+    <div className='text-gray-900 dark:text-gray-200'>
+      <nav className={`${show ? 'AppNavVisible' : 'AppNavNotVisible'} z-10 shadow-md w-screen md:w-1/6 md:min-w-[300px] h-10 md:h-screen flex md:flex-col border-r-2 border-black bg-web-fondo dark:bg-web-formBgDarkMode justify-between items-center md:items-start px-4 md:px-0`}>
         <div className='w-full h-full hidden md:block'>
-          <section title='profile-info' className='w-full h-1/2 bg-teal-300'>
-            <div className='w-full h-1/2 flex justify-center items-center p-2'>
-              <img src={`/userProfiles/${userData.profilePic}`} alt="user profile picture" className='rounded-full max-w-full max-h-full' />
-            </div>
-            <div className='w-full h-1/2 p-2 flex flex-col justify-center items-center gap-2'>
-              <section className='w-full px-5 h-1/3 rounded-3xl flex justify-center items-center bg-emerald-500'>
-                <h3 title='Nombre de usuario'>{userData.name} {userData.lastName}</h3>
-              </section>
-              <section className='w-full h-1/3 rounded-3xl flex justify-center items-center bg-fuchsia-400'>
-                <h3 title='Edad'>{userData.birthdate}</h3>
-              </section>
-            </div>
-          </section>
-          <section title='settings' className='w-full h-1/2 flex flex-col cursor-pointer bg-pink-400'>
-            <Link to='resume' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Resumen</Link>
-            <Link to='stats' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Estadísticas</Link>
-            <Link to='calendar' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Calendario</Link>
-            <Link to='tips' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Consejos</Link>
-            <Link to='newData' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-x-2 border-t-2'>Añadir datos</Link>
-            <Link to='newData' className='w-full h-1/6 flex justify-center items-center hover:bg-red-500 border-solid border-black border-2'>Cerrar sesión</Link>
+          <UserInfo />
+          <section title='settings' className='w-full h-1/2 flex flex-col items-center cursor-pointer bg-web-fondo dark:bg-web-formBgDarkMode'>
+            <Link onClick={() => setIndex(0)} to='resume' className='w-5/6 h-1/6 flex justify-center items-center text-xl border-y-2 border-gray-600'><div className={`${index === 0 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Resumen</div></Link>
+            <Link onClick={() => setIndex(1)} to='stats' className='w-5/6 h-1/6 flex justify-center items-center text-xl border-b-2 border-gray-600'><div className={`${index === 1 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Estadísticas</div></Link>
+            <Link onClick={() => setIndex(2)} to='calendar' className='w-5/6 h-1/6 flex justify-center items-center text-xl border-b-2 border-gray-600'><div className={`${index === 2 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Calendario</div></Link>
+            <Link onClick={() => setIndex(3)} to='tips' className='w-5/6 h-1/6 flex justify-center items-center text-xl border-b-2 border-gray-600'><div className={`${index === 3 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Consejos</div></Link>
+            <Link onClick={() => setIndex(4)} to='newData' className='w-5/6 h-1/6 flex justify-center items-center text-xl border-b-2 border-gray-600'><div className={`${index === 4 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Añadir datos</div></Link>
+            <div onClick={handleLogout} className='w-5/6 h-1/6 flex justify-center items-center text-xl'><div className={`${index === 5 ? 'bg-blue-400 dark:text-gray-900' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} rounded-md hover:scale-105 px-8 py-2`}>Cerrar sesión</div></div>
           </section>
         </div>
-        <img onClick={handleNav} className='h-[40px] rounded-full md:hidden' src={`/userProfiles/${userData.profilePic}`} alt="user profile picture" />
+
         <div onClick={handleNav}>
           <img className='h-[30px] filter dark:invert md:hidden' src="/icons/menu.svg" alt="menu button" />
         </div>
@@ -100,15 +93,14 @@ function AppNavbar () {
       <div onClick={handleNav} className={!nav ? 'fixed left-0 top-0 w-screen h-screen bg-black opacity-40 z-10' : 'fixed bg-transparent left-0 top-0 w-screen h-screen duration-1000 -z-50'}></div>
       <div className={!nav ? 'fixed right-0 top-0 w-[300px] h-screen flex flex-col  border-gray-700 shadow-2xl dark:border-gray-200 bg-web-fondo dark:bg-web-formBgDarkMode duration-500 z-20' : 'fixed right-[-100%] top-0 w-[300px] h-screen flex flex-col duration-500 z-20'}>
         <img onClick={handleNav} className='h-5 self-end mr-3 mt-3 filter dark:invert' src="/icons/cancel.svg" alt="close menu button" />
-        <img className='rounded-full w-1/2 self-center' src={`/userProfiles/${userData.profilePic}`} alt="user profile picture" />
-        <p className='dark:text-gray-100 text-gray-900 text-center pt-2'>{userData.name} {userData.lastName}</p>
+        <UserInfo />
         <ul className='p-4 dark:text-gray-100 text-gray-900'>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='resume'>Resumen</Link></li>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='stats'>Estadísticas</Link></li>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='calendar'>Calendario</Link></li>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='tips'>Consejos</Link></li>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='newData'>Añadir datos</Link></li>
-          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link to='newData'>Cerrar sesión</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link className='w-full' to='resume'>Resumen</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link className='w-full' to='stats'>Estadísticas</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link className='w-full' to='calendar'>Calendario</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link className='w-full' to='tips'>Consejos</Link></li>
+          <li className='p-2 border-b border-gray-700 dark:border-gray-100'><Link className='w-full' to='newData'>Añadir datos</Link></li>
+          <li onClick={handleLogout} className='p-2 border-b border-gray-700 dark:border-gray-100 cursor-pointer'><div>Cerrar sesión</div></li>
         </ul>
         <div className="flex gap-5 px-6">
         <a href={SOCIAL.INSTAGRAM}><img className="social filter dark:invert h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/instagram.svg" alt="" /></a>
