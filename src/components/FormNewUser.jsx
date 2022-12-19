@@ -59,8 +59,6 @@ function FormNewUser (props) {
             <Input value={name} onInput={ev => setName(ev.target.value)} header="Nombre" id="name" type="text" placeholder="Introduce tu nombre" minlength="3" maxlength="20" />
             <Input value={lastName} onInput={ev => setLastName(ev.target.value)} header="Apellidos" id="lastname" type="text" placeholder="Introduce tus apellidos" minlength="3" maxlength="20" />
             <Input value={birthdate} onInput={ev => setBirthdate(ev.target.value)} header="Fecha de nacimiento" id="birthdate" type="date" min="1900-01-01" max="2020-01-01" />
-            {// <Input header="Foto de perfil" id="profilePicture" type="file" min="hola" />
-            }
           </fieldset>
           <button onClick={handleNewData} type="submit" className="mx-auto mt-6 button-web">Enviar y continuar</button>
         </form>

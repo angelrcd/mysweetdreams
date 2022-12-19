@@ -10,11 +10,11 @@ const options = {
   }
 }
 
-export function useGetUserData () {
+export function useGetUserData (handleImage) {
   const [userData, setUserData] = useState('aaa')
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState()
-
+  const [image, setImage] = useState()
   useEffect(() => {
     // const fetchData = async () => {
     //   const result = await fetch(API.USERS.MY_USER, options)
@@ -29,7 +29,10 @@ export function useGetUserData () {
     fetch(API.USERS.MY_USER, options)
       .then(response => response)
       .then(jsonResult => jsonResult.json())
-      .then(data => setUserData(data))
+      .then(data => {
+        setUserData(data)
+        handleImage(data.profilePic)
+      })
       .catch(err => setError(err))
       .finally(() => setIsLoading(false))
   }, [])
