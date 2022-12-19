@@ -1,4 +1,4 @@
-# MySweetDreams
+# MySweetDreams: FrontEnd
 <p align="center">
   <a href="https://mysweetdreams.es" target="_blank" rel="noopener noreferrer">
     <img width="180" src="./public/img/logo.png" alt="App logo">
@@ -7,17 +7,17 @@
 <br/>
 
 <p align="center">
-  <a href="https://pnpmjs.com/package/vite"><img src="https://img.shields.io/npm/v/vite.svg" alt=""></a>
-  <a href="https://nodejs.org/en/about/releases/"><img src="https://img.shields.io/node/v/vite.svg" alt="node compatibility"></a>
-  <a href="https://chat.vitejs.dev"><img src="https://img.shields.io/badge/chat-discord-blue?style=flat&logo=discord" alt="discord chat"></a>
-
-
+      <img src="https://img.shields.io/npm/v/npm?logo=npm" alt="">
+      <img src="https://img.shields.io/npm/v/pnpm?label=pnpm&logo=pnpm">
+      <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+      <img src="https://img.shields.io/npm/v/tailwind?label=Tailwind&logo=Tailwind%20CSS&style=for-the-badge">
+      <a href="https://chat.vitejs.dev"><img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="discord chat"></a>
 </p>
 <br/>
 
 [MySweetDreams.es](https://mysweetdreams.es/ "SweetDreams Homepage")
-Es una plataforma que tiene como objetivo ayudar a las personas para que tengan un mejor cuidado de sus horas de sueño, y así mejorar su salud y vitalidad.
-A traves de gráficas de datos se podra visualizar la informacion que introduzcas de tus datos de sueño.
+It is a platform that aims to help people take better care of their sleep hours, and thus improve their health and vitality.
+Through data graphs you can view the information you enter from your sleep data.
 
 ## [Vite](https://github.com/vitejs)
 ----
@@ -42,11 +42,12 @@ In addition, Vite is highly extensible via its [Plugin API](https://vitejs.dev/g
 
 ## [Postcss](https://github.com/postcss)
 ----
-
+<a href="https://postcss.org/">
 <img align="right" width="95" height="95"
+    href="https://postcss.org/"
      alt="Philosopher’s stone, logo of PostCSS"
      src="https://postcss.org/logo.svg">
-
+</a>
 [chat-img]: https://img.shields.io/badge/Gitter-Join_the_PostCSS_chat-brightgreen.svg
 [chat]:     https://gitter.im/postcss/postcss
 
@@ -80,6 +81,10 @@ It's fast, flexible, and reliable — with zero-runtime.
 
 ## [Eslint](https://github.com/eslint)
 ----
+<a href="https://github.com/eslint/eslint">
+  <img align="right" src="https://avatars.githubusercontent.com/u/6019716?s=64&v=4"
+       alt="Sponsored by Tailwind CSS" width="50" height="50">
+</a>
 ESLint es una herramienta para identificar e informar sobre patrones encontrados en el código ECMAScript/JavaScript. En muchos sentidos, es similar a JSLint y JSHint con algunas excepciones:
 
 ESLint usa Espree para el análisis de JavaScript.
@@ -88,5 +93,39 @@ ESLint es completamente conectable, cada regla es un complemento y puede agregar
 
 <br />
 
-## Libraries
-----
+
+## Team
+---
+
+<table><tbody><tr><td align="center" valign="top" width="11%">
+  <a href="https://github.com/edm95">
+    <img src="https://avatars.githubusercontent.com/u/114014548?v=4" width="75" height="75"><br />
+    Eduardo Díez
+  </a>
+    </td><td align="center" valign="top" width="11%">
+    <a href="https://github.com/NuberuSH">
+    <img src="https://avatars.githubusercontent.com/u/45773746?v=4" width="75" height="75"><br />
+    Dani Tallón
+  </a>
+    </td><td align="center" valign="top" width="11%">
+  <a href="https://github.com/AntonioBogallo">
+    <img src="https://avatars.githubusercontent.com/u/38227095?v=4" width="75" height="75"><br />
+    Antonio Bogallo
+  </a>
+    </td><td align="center" valign="top" width="11%">
+
+  <a href="https://github.com/angelrcd">
+      <img src="https://avatars.githubusercontent.com/u/114014506?v=4" width="75" height="75"><br />
+      Ángel Romero
+  </a>
+      </td><td align="center" valign="top" width="11%">
+  <a href="https://github.com/angelrcd">
+      <img src="https://avatars.githubusercontent.com/u/59933433?v=4" width="75" height="75"><br />
+      Jorge Castelló
+  </a>
+        </td><td align="center" valign="top" width="11%">
+  <a href="https://github.com/tmpmolina">
+      <img src="https://avatars.githubusercontent.com/u/114014645?v=4" width="75" height="75"><br />
+      Antonio Molina
+  </a>
+</td></tr></tbody></table>
