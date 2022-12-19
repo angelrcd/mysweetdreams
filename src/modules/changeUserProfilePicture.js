@@ -24,8 +24,8 @@ export function uploadPicToServer (picture, userId) {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
     },
-    body: picture
+    body: newFile
   }
   console.log(newFile)
-  fetch(IMAGES_URL, newFile)
+  fetch(IMAGES_URL, options)
 }
