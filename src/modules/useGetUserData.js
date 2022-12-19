@@ -14,7 +14,7 @@ export function useGetUserData () {
   const [userData, setUserData] = useState('aaa')
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState()
-
+  const [image, setImage] = useState()
   useEffect(() => {
     // const fetchData = async () => {
     //   const result = await fetch(API.USERS.MY_USER, options)

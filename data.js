@@ -13,7 +13,7 @@ export const PSWD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$
 export const PSW_REGEX_2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/
 
 export const LANDING_URL = 'http://localhost:5173/'
-export const IMAGE_FOLDER = 'https://img.mysweetdreams.es/img/pfp/'
+export const IMAGES_URL = 'https://img.mysweetdreams.es/img/pfp/'
 // export const LANDING_URL = 'https://mysweetdreams.es'
 const API_URL = 'http://localhost:3000'
 // const API_URL = 'https://api.mysweetdreams.es'
@@ -24,7 +24,10 @@ export const API = {
     MY_USER: API_URL + '/users/myUser',
     ADD: API_URL + '/users/add'
   },
-  AUTH: API_URL + '/auth',
+  AUTH: {
+    LOGIN: API_URL + '/auth',
+    LOGOUT: API_URL + '/auth/logout'
+  },
   SLEEP: {
     DAY: API_URL + '/data/day',
     WEEK: API_URL + '/data/week',
@@ -41,8 +44,3 @@ export const SOCIAL = {
   TWITTER: 'https://twitter.com/mySweetDreamsAp',
   INSTAGRAM: 'https://www.instagram.com/mysweetdreamsapp/'
 }
-
-console.log(EMAIL_REGEX.test('aaa@aaaa'))
-console.log(EMAIL_REGEX_2.test('aaa@aaaa.es'))
-console.log(PSWD_REGEX.test('Holaaawe2!a'))
-console.log(PSW_REGEX_2.test('Hola12!a'))

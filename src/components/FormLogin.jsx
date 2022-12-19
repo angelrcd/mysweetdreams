@@ -31,7 +31,7 @@ function FormLogin (props) {
   function handleLogin (event) {
     if (isFormValid(email, EMAIL_REGEX) && isFormValid(pswd, PSWD_REGEX)) {
       event.preventDefault()
-      fetch(API.AUTH, options)
+      fetch(API.AUTH.LOGIN, options)
         .then(response => response.text())
         .then(data => {
           switch (data) {
