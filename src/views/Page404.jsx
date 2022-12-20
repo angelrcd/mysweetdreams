@@ -1,3 +1,4 @@
+import '../css/Page404.css'
 function Page404() {
     return (<div className="container">
         <h1>Error 404</h1>
