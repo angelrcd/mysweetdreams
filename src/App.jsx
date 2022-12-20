@@ -10,12 +10,13 @@ import { Routes, Route } from 'react-router-dom'
 
 function App () {
   return (
+    // ¡¡CAMBIAR LA RUTA DEL WHO!!
     <div className='App'>
       <Routes>
         <Route path='/' element={<MainPage />}/>
         <Route path='/login' element={<Login />}/>
         <Route path='/signup' element={<Signup />}/>
-        <Route path='/who' element={<Who />}/>
+        <Route path='/who' element={<Dashboard />}/>
         <Route path='/new-user-form' element={<UserDataForm />}/>
         <Route path='/app/*' element={<Dashboard />}/>
       </Routes>

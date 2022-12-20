@@ -9,6 +9,17 @@ function helloWorld (value, event) {
   console.log(`${value.getDate()},${value.getMonth()},${value.getFullYear()}`)
 }
 
+const Sleepdata = {
+  userId: '7a0eed16- 9430 - 4d68-901f - c0d4c1c3bf00', // string,
+  day: '2007-07-09T05:51:59.390Z', // Date,
+  start: '1992-03-08T15:13:16.688Z', // Date,
+  end: '', // Date,
+  mark: 7, // number,
+  timesAwakened: 2, // number,
+  restfulSleep: false, // boolean,
+  notes: 'He dormido del carajo mi armah'// string
+}
+
 function Resume () {
   return (
         <main className='w-full h-screen grid grid-cols-2 grid-rows-2 '>

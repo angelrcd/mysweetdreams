@@ -9,7 +9,9 @@ function Consejos () {
   }, [])
 
   return (
-    <h1>Probando la base de datos, MANTENGAN LA CALMA!</h1>
+    <div className='w-full h-full bg-yellow-400'>
+      holaa caracola
+    </div>
   )
 }
 

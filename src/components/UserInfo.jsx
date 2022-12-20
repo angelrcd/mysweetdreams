@@ -27,7 +27,7 @@ function UserInfo () {
   }
 
   const profileUserInfo = (
-    <div className='w-full h-[300px] flex flex-col justify-center items-center p-2'>
+    <div className='w-full flex flex-col justify-center items-center p-2'>
       <img title="Foto de perfil de usuario" src={image} alt="user profile picture" className='rounded-full h-[220px] w-[220px] border-2 border-black object-cover' />
       <input className='hidden' type="file" ref={fileInput} onChange={onImageChange} />
       <span onClick={selectFile}>
@@ -53,16 +53,17 @@ function UserInfo () {
       />
     </div>
   )
+  const birthdate = new Date(userData.birthdate)
 
   return (
-    <section className='w-full h-1/2 bg-web-fondo dark:bg-web-formBgDarkMode'>
+    <section className='w-full h-full bg-web-fondo dark:bg-web-formBgDarkMode'>
       {isLoading ? profileUserLoading : profileUserInfo}
-      <div className='relative w-full h-fit p-2 flex flex-col justify-center items-center gap-2'>
+      <div className='w-full h-fit p-2 flex flex-col justify-center items-center gap-2'>
         <section className='text-xl'>
           <h3 title='Nombre de usuario'>{userData.name} {userData.lastName}</h3>
         </section>
         <section className=''>
-          <h3 title='Edad'>{userData.birthdate}</h3>
+          <h3 title='Edad'>{birthdate.getDate()}/{birthdate.getMonth() + 1}/{birthdate.getFullYear()}</h3>
         </section>
       </div>
     </section>
