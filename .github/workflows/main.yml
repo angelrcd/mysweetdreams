@@ -1,12 +1,12 @@
+name: deploy web to production server
+
 on:
   push:
     branches:
-    - main
+    - "main"
 
 jobs:
   build:
-  
-    name: build and deploy to production
     runs-on: ubuntu-latest
     
     steps:
