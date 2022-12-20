@@ -1,5 +1,3 @@
-name: deploy web to production
-
 on:
   push:
     branches:
