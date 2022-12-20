@@ -2,9 +2,9 @@ import '../css/MainPage.css'
 import Navbar from './Navbar'
 import { Link } from 'react-router-dom'
 
-function LandingImage () {
+function LandingImage() {
   return (
-    <head className="bg-fixed h-screen bg-cover bg-[url('/img/background-night.jpg')] flex flex-col justify-between" >
+    <head className="bg-fixed h-screen bg-cover bg-[url('/img/background.jpg')] flex flex-col justify-between" >
       <div className="w-screen">
 
         <Navbar />
