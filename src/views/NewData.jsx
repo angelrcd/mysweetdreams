@@ -25,7 +25,8 @@ function handleSubmit () {
 }
 
 function NewData () {
-  const [date, setDate] = useState('')
+  const [startDate, setStartDate] = useState('')
+  const [finishDate, setFinishDate] = useState('')
   const [startTime, setStartTime] = useState('')
   const [endTime, setEndTime] = useState('')
   const [sleepScore, setSleepScore] = useState('')
@@ -35,18 +36,34 @@ function NewData () {
 
   function handleSubmit (event) {
     event.preventDefault()
-    // JSON que incluye los datos introducidos en el formulario, actualizados en tiempo real
+    const day = new Date(`${startDate} ${startTime}`)
+    const start = day
+    const end = new Date(`${finishDate} ${endTime}`)
+    const mark = parseInt(sleepScore)
+    const timesAwakened_ = parseInt(timesAwakened)
+    // setStartDate(new Date(`${startDate} ${startTime}`))
+    // setFinishDate(new Date(finishDate + '' + endTime))
+    // console.log(startDate.getHours())
+    // setStartDate(new Date(startDate.getFullYear(), startDate.getMonth() + 1, startDate.getDate()))
+
+    // console.log(startDate)
+    // // console.log(startDate.constructor())
+    // // JSON que incluye los datos introducidos en el formulario, actualizados en tiempo real
     const jsonData = {
-      day: date,
-      start: startTime,
-      end: endTime,
-      mark: sleepScore,
-      timesAwakened,
+      day,
+      start,
+      end,
+      mark,
+      timesAwakened: timesAwakened_,
       restfulSleep: restFul,
       notes: comments
     }
 
-    // Información sobre el tipo de request que se hará en el fetch
+    // console.log(jsonData.start.getTime())
+
+    // console.log(jsonData)
+
+    // // Información sobre el tipo de request que se hará en el fetch
     const options = {
       credentials: 'include',
       method: 'POST',
@@ -67,8 +84,12 @@ function NewData () {
             <h1>Añadir datos</h1>
             <div className='w-full h-28 pt-1 flex justify-around items-center gap-2'>
                 <div className='w-auto h-auto  flex flex-col'>
-                    <label htmlFor="date">Fecha</label>
-                    <input className='border-solid border-black border-2 text-black' type="date" id="date" onInput={ev => setDate(ev.target.value)} />
+                    <label htmlFor="date">Fecha Comienzo sueño</label>
+            <input className='border-solid border-black border-2 text-black' type="date" id="date" onInput={ev => setStartDate(ev.target.value)} />
+                </div>
+                <div className='w-auto h-auto  flex flex-col'>
+                    <label htmlFor="date">Fecha Fin sueño</label>
+            <input className='border-solid border-black border-2 text-black' type="date" id="date" onInput={ev => setFinishDate(ev.target.value)} />
                 </div>
                 <div className='w-auto h-auto flex flex-col'>
                     <label htmlFor="initHour">Hora de inicio</label>
