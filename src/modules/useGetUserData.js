@@ -1,6 +1,7 @@
 // Custom hook, hace un fetch a la api para obtener los datos del usuario
 import { useState, useEffect } from 'react'
 import { API } from '../../data'
+import { useNavigate } from 'react-router-dom'
 
 const options = {
   credentials: 'include',
@@ -14,20 +15,16 @@ export function useGetUserData (handleImage) {
   const [userData, setUserData] = useState('aaa')
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState()
-  const [image, setImage] = useState()
+  const navigate = useNavigate()
+
   useEffect(() => {
-    // const fetchData = async () => {
-    //   const result = await fetch(API.USERS.MY_USER, options)
-    //   const jsonResult = await result.json()
-
-    //   setUserData(jsonResult)
-    //   console.log(userData)
-    // }
-
-    // fetchData()
-
     fetch(API.USERS.MY_USER, options)
-      .then(response => response)
+      .then(response => {
+        if (response.status === 403) {
+          return navigate('/login')
+        }
+        return response
+      })
       .then(jsonResult => jsonResult.json())
       .then(data => {
         setUserData(data)
