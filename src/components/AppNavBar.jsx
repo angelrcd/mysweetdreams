@@ -64,6 +64,7 @@ function AppNavbar () {
 
   async function handleLogout () {
     const logoutResponse = await logout()
+    console.log(logoutResponse)
     if (logoutResponse === 'OK') {
       return navigate('/login')
     } else {
