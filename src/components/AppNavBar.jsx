@@ -65,7 +65,7 @@ function AppNavbar () {
   async function handleLogout () {
     const logoutResponse = await logout()
     console.log(logoutResponse)
-    if (logoutResponse === 'OK') {
+    if (logoutResponse === 200) {
       return navigate('/login')
     } else {
       alert('Ha ocurrido algun error al cerrar sesión')
