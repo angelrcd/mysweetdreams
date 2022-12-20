@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { useGetUserData } from '../modules/useGetUserData'
 import UploadPicButton from './UploadPicButton'
 import { Oval } from 'react-loader-spinner'
 import { changeDBUserProfilePic, uploadPicToServer } from '../modules/changeUserProfilePicture'
-import { logout } from '../modules/logout'
 
 function UserInfo () {
   const handleImage = (pfp) => {
@@ -12,6 +11,7 @@ function UserInfo () {
 
   const { userData, isLoading, error } = useGetUserData(handleImage)
   const [image, setImage] = useState('https://img.mysweetdreams.es/img/pfp/' + userData.profilePic)
+
   const fileInput = useRef()
   const selectFile = () => {
     fileInput.current.click()
@@ -53,6 +53,12 @@ function UserInfo () {
       />
     </div>
   )
+
+  if (error) {
+    return (
+      <h1>ERROR</h1>
+    )
+  }
 
   return (
     <section className='w-full h-1/2 bg-web-fondo dark:bg-web-formBgDarkMode'>
