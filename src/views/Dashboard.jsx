@@ -1,5 +1,5 @@
 import '../css/MainPage.css'
-import AppNavbar from '../components/AppNavBar'
+// import AppNavbar from '../components/AppNavBar'
 import { Route, Routes } from 'react-router-dom'
 import Resume from './Resume.jsx'
 import Estadisticas from './Estadisticas.jsx'

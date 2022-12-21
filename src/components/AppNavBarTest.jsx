@@ -16,9 +16,9 @@ function AppNavbarTest () {
   const [index, setIndex] = useState(0)
   const navigate = useNavigate()
 
-  const handleNav = () => {
-    setNav(!nav)
-  }
+  // const handleNav = () => {
+  //   setNav(!nav)
+  // }
 
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {
@@ -58,9 +58,9 @@ function AppNavbarTest () {
     }
   }, [nav])
 
-  function setYTo0 () {
-    window.scrollTo(0, 0)
-  }
+  // function setYTo0 () {
+  //   window.scrollTo(0, 0)
+  // }
 
   async function handleLogout () {
     const logoutResponse = await logout()
