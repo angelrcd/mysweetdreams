@@ -62,7 +62,7 @@ function Calendario () {
 
   return (
         <main className='w-full h-screen grid grid-cols-2 grid-rows-2'>
-          <Calendar onClickDay={handleDayClick} className="w-full h-full" />
+          <Calendar onClickDay={handleDayClick} className="mt-20 border-transparent w-full h-full bg-transparent" />
           <div className='w-full h-full flex flex-col justify-around items-center  row-span-3 p-4'>
             <section className='w-full h-1/6 flex justify-center items-center border-solid border-black border-2'>
               <h2>{clickedDay}</h2>

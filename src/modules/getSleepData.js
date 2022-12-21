@@ -1,8 +1,12 @@
 export function getSleepData (arrayData) {
   let accumulatedSleepTime = 0
   let accumulatedAwakenedTimes = 0
+  let isRestfulSleep = false
   const markArray = []
   for (let i = 0; i < arrayData.length; i++) {
+    if (i === 0) {
+      isRestfulSleep = arrayData[i].restfulSleep
+    }
     const start = new Date(arrayData[i].start).getTime()
     const end = new Date(arrayData[i].end).getTime()
     accumulatedSleepTime += end - start
@@ -13,11 +17,10 @@ export function getSleepData (arrayData) {
   if (isNaN(accumulatedSleepTime)) {
     return '-'
   }
-  console.log(accumulatedSleepTime)
-  console.log((accumulatedSleepTime / (60 * 60 * 1000)).toFixed(1))
   return {
     sleepTime: (accumulatedSleepTime / (60 * 60 * 1000)).toFixed(1),
     averageMark: (accumulatedmark / markArray.length).toFixed(1),
-    awakenedTime: accumulatedAwakenedTimes
+    awakenedTime: accumulatedAwakenedTimes,
+    isRestfulSleep
   }
 }
