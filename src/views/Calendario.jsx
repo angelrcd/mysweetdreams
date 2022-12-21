@@ -29,14 +29,16 @@ function Calendario () {
   // }, [])
 
   function handleDayClick (value, event) {
-    console.log(value.toJSON())
+    const date = new Date(value)
+    date.setHours(1)
+    console.log(date.toJSON())
     const options = {
       credentials: 'include',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ day: value })
+      body: JSON.stringify({ day: date })
     }
     fetch(API.SLEEP.DAY, options)
       .then(response => {
@@ -51,7 +53,6 @@ function Calendario () {
           setAwakenedTime(0)
         } else {
           const { sleepTime, averageMark, awakenedTime } = getSleepData(data)
-          console.log(sleepTime)
           setHoursAsleep(sleepTime)
           setSleepMark(averageMark)
           setAwakenedTime(awakenedTime)

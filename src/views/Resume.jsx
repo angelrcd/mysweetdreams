@@ -9,7 +9,7 @@ import 'moment/locale/es'
 
 function Resume () {
   const today = new Date()
-  today.setHours(24)
+  today.setHours(1)
   today.setMinutes(0)
   today.setSeconds(0)
   today.setMilliseconds(0)
