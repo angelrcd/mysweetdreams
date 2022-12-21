@@ -11,6 +11,7 @@ const options = {
 export const logout = async () => {
   if (confirm('¿Quieres cerrar sesión?')) {
     const response = await fetch(API.AUTH.LOGOUT, options)
-    return response.statusText
+    console.log(response.status)
+    return response.status
   }
 }

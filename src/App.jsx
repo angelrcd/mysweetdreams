@@ -6,7 +6,7 @@ import Signup from './views/Signup.jsx'
 import Login from './views/Login.jsx'
 import Dashboard from './views/Dashboard'
 
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Page404 from './views/Page404'
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/who' element={<Who />} />
         <Route path='/new-user-form' element={<UserDataForm />} />
+        <Route path='/app' element={<Navigate replace to="/app/resume" />} />
         <Route path='/app/*' element={<Dashboard />} />
         <Route path='/*' element={<Page404 />} />
       </Routes>
