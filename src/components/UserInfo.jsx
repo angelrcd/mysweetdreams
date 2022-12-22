@@ -3,6 +3,8 @@ import { useGetUserData } from '../modules/useGetUserData'
 import UploadPicButton from './UploadPicButton'
 import { Oval } from 'react-loader-spinner'
 import { changeDBUserProfilePic, uploadPicToServer } from '../modules/changeUserProfilePicture'
+import moment from 'moment'
+import 'moment/locale/es'
 
 function UserInfo () {
   const handleImage = (pfp) => {
@@ -67,8 +69,8 @@ function UserInfo () {
         <section className='text-xl'>
           <h3 title='Nombre de usuario'>{userData.name} {userData.lastName}</h3>
         </section>
-        <section className=''>
-          <h3 title='Edad'>{userData.birthdate}</h3>
+        <section className='text-xl'>
+          <h3 title='Edad'>{moment().diff(userData.birthdate, 'years')}</h3>
         </section>
       </div>
     </section>

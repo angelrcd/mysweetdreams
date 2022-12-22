@@ -6,3 +6,16 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+.highlight abbr {
+  color: white!important;
+  background: #3b82f6!important;
+  border-radius: 100%;
+}
+abbr {
+  width: 20px!important;
+  padding: 5px;
+}
+.react-calendar__tile:hover {
+  background: #60a5fa!important;
+}
