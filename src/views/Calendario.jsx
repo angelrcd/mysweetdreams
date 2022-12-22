@@ -21,18 +21,19 @@ function Calendario () {
   const { sleepData, isLoading, error } = useGetAllSleepData()
 
   function getArrayDays (sleepyData) {
-    console.log(sleepyData)
-    const result = sleepyData.map(data => data.day)
-    const dates = result.map(data => data.slice(0, 10))
-    console.log(dates)
-    return dates
+    if (sleepyData === 'This user has no registered data, please enter sleep data') {
+      return []
+    } else {
+      const result = sleepyData.map(data => data.day)
+      const dates = result.map(data => data.slice(0, 10))
+      return dates
+    }
   }
 
   function handleDayClick (value, event) {
     setIsShowingDay(true)
     const date = new Date(value)
     date.setHours(1)
-    console.log(date.toJSON())
     const options = {
       credentials: 'include',
       method: 'POST',
@@ -47,7 +48,6 @@ function Calendario () {
       })
       .then(jsonResult => jsonResult.json())
       .then(data => {
-        console.log(data)
         if (data === 'This user has no registered data for this day, please enter sleep data') {
           setHoursAsleep('-')
           setSleepMark('-')
