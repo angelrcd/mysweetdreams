@@ -6,6 +6,7 @@ import 'moment/locale/es'
 import { API } from '../../data'
 import { getSleepData } from '../modules/getSleepData'
 import { useGetAllSleepData } from '../modules/useGetAllSleepData'
+import { Oval } from 'react-loader-spinner'
 
 function Calendario () {
   const [clickedDay, setClickedDay] = useState('Haz click en el calendario para obtener la información de sueño de ese día')
@@ -78,8 +79,25 @@ function Calendario () {
 
   if (isLoading) {
     return (
-      <div>a</div>
+      <div className='mt-40 w-full h-screen flex item-center justify-center'>
+        <Oval
+          height={220}
+          width={220}
+          color="#60a5fa"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel='oval-loading'
+          secondaryColor="60a5fa"
+          strokeWidth={2}
+          strokeWidthSecondary={2}
+        />
+      </div>
     )
+  }
+
+  if (error) {
+    <div>Error</div>
   }
 
   return (
