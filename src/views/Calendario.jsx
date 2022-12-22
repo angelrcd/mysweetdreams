@@ -5,6 +5,7 @@ import moment from 'moment'
 import 'moment/locale/es'
 import { API } from '../../data'
 import { getSleepData } from '../modules/getSleepData'
+import { useGetAllSleepData } from '../modules/useGetAllSleepData'
 
 function Calendario () {
   const [clickedDay, setClickedDay] = useState('Haz click en el calendario para obtener la información de sueño de ese día')
@@ -15,22 +16,16 @@ function Calendario () {
   const [awakenedTime, setAwakenedTime] = useState('-')
   const [restful, setRestFul] = useState('-')
   const [note, setNote] = useState('-')
-  // const data = {
-  //   name: 'Juan',
-  //   email: 'Juan153@gmail.com',
-  //   password: 'Cortocircuit29123!',
-  //   birthdate: '26/5/2020'
-  // }
 
-  // useEffect(() => {
-  //   fetch('https://api.mysweetdreams.es/users/add', {
-  //     method: 'POST',
-  //     body: JSON.stringify(data)
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => console.log(data))
-  //     .catch(error => console.log(error))
-  // }, [])
+  const { sleepData, isLoading, error } = useGetAllSleepData()
+
+  function getArrayDays (sleepyData) {
+    console.log(sleepyData)
+    const result = sleepyData.map(data => data.day)
+    const dates = result.map(data => data.slice(0, 10))
+    console.log(dates)
+    return dates
+  }
 
   function handleDayClick (value, event) {
     setIsShowingDay(true)
@@ -81,9 +76,23 @@ function Calendario () {
     return h + ':' + m
   }
 
+  if (isLoading) {
+    return (
+      <div>a</div>
+    )
+  }
+
   return (
         <main className='w-full h-screen grid grid-cols-1 grid-rows-2'>
-          <Calendar onClickDay={handleDayClick} className="mt-10 col-span-3 border-transparent w-full h-full bg-transparent" />
+          <Calendar
+            onClickDay={handleDayClick}
+            className="mt-10 col-span-3 border-transparent w-full h-full bg-transparent"
+            tileClassName={({ date, view }) => {
+              if (getArrayDays(sleepData).find(x => x === moment(date).format('YYYY-MM-DD'))) {
+                return 'highlight'
+              }
+            }}
+          />
           <section className='flex'>
             <div className='w-1/2 h-full flex flex-col justify-around items-center row-span-3 p-4'>
               <section className='w-full h-1/6 flex justify-center items-center'>
