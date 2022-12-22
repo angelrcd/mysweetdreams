@@ -1,7 +1,6 @@
 import '../css/NewData.css'
 import { useState } from 'react'
 import { API } from '../../data'
-import { useNavigate } from 'react-router-dom'
 
 function NewData () {
   const [startDate, setStartDate] = useState('')
@@ -12,7 +11,6 @@ function NewData () {
   const [timesAwakened, setTimesAwakened] = useState('0')
   const [restFul, setRestFul] = useState('')
   const [comments, setComments] = useState('')
-  const navigate = useNavigate()
 
   function handleSubmit (event) {
     event.preventDefault()

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { API } from '../../data'
 
-export function useGetAllSleepData (day) {
+export function useGetAllSleepData () {
   const options = {
     credentials: 'include',
     method: 'GET',
@@ -23,7 +23,6 @@ export function useGetAllSleepData (day) {
       .then(jsonResult => jsonResult.json())
       .then(data => {
         setSleepData(data)
-        console.log(data)
       })
       .catch(err => {
         console.log(err)

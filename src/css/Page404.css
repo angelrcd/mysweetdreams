@@ -1,16 +1,14 @@
 body {
     font-family: sans-serif;
-    text-align: center;
     background-color: #d1e0e0;
-    color: #606c76;
 }
 
-h1 {
+.container h1 {
     font-size: 3em;
     margin: 0;
 }
 
-p {
+. containerp {
     font-size: 1.5em;
     margin: 0;
 }
