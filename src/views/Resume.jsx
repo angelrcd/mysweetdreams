@@ -33,6 +33,7 @@ function Resume () {
       )
     }
   }
+
   return (
         <main className='w-full h-screen grid grid-cols-2 grid-rows-2 '>
             <div className='w-full h-full flex justify-center items-center bg-blue-600'>
@@ -41,7 +42,7 @@ function Resume () {
             <div className='w-full h-full bg-red-600'></div>
             <div className='w-full h-full flex flex-col justify-center gap-3 items-center bg-yellow-600'>
                 <h2 className='text-xl'>Datos de hoy {moment(new Date()).format('LL')}</h2>
-                {printTodayInfo(sleepData)}
+                {isLoading ? 'aaaaaaaaaaaaaaaaaa' : printTodayInfo(sleepData)}
             </div>
             <div className='w-full h-full bg-green-600'></div>
         </main>
