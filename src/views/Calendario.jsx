@@ -53,7 +53,7 @@ function Calendario () {
           setSleepMark('-')
           setAwakenedTime('-')
           setRestFul('')
-          setNote('No ha datos de sueño para este día')
+          setNote('No hay datos de sueño para este día')
           setDayExists(false)
         } else {
           setDayExists(true)
