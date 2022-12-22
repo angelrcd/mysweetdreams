@@ -1,5 +1,6 @@
 import { Calendar } from 'react-calendar'
 import Grafica from '../components/Grafica.jsx'
+import 'react-calendar/dist/Calendar.css'
 import { useGetUserSleepDataByDay } from '../modules/useGetSleepDataByDay'
 import { getSleepData } from '../modules/getSleepData'
 import moment from 'moment/moment'
