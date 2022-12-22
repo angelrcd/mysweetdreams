@@ -24,6 +24,22 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  scales: {
+    yAxes: [
+      {
+        gridLines: {
+          color: 'white'
+        }
+      }
+    ],
+    xAxes: [
+      {
+        gridLines: {
+          color: 'white'
+        }
+      }
+    ]
+  },
   plugins: {
     legend: {
       position: 'top'

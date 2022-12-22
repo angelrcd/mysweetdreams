@@ -19,16 +19,16 @@ function Estadisticas () {
   //   </main>
 
     <main className='w-full h-screen grid grid-cols-2 grid-rows-2 '>
-    <div className='w-full h-full flex justify-center items-center bg-blue-600'>
+    <div className='w-full h-full flex justify-center items-center'>
       <Grafica />
     </div>
-    <div className='w-full h-full flex justify-center items-center bg-red-600'>
+    <div className='w-full h-full flex justify-center items-center'>
         <GraficaTest />
     </div>
-    <div className='w-full h-full flex justify-center items-center bg-yellow-600'>
+    <div className='w-full h-full flex justify-center items-center'>
         <GraficaLineal />
     </div>
-    <div className='w-full h-full flex justify-center items-center bg-green-600'></div>
+    <div className='w-full h-full flex justify-center items-center'></div>
 </main>
   )
 }
