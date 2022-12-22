@@ -70,7 +70,7 @@ function UserInfo () {
           <h3 title='Nombre de usuario'>{userData.name} {userData.lastName}</h3>
         </section>
         <section className='text-xl'>
-          <h3 title='Edad'>{moment().diff(userData.birthdate, 'years')}</h3>
+          <h3 className={`${isLoading ? 'hidden' : ''}`} title='Edad'>{moment().diff(userData.birthdate, 'years')}</h3>
         </section>
       </div>
     </section>
