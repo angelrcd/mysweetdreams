@@ -16,6 +16,6 @@ abbr {
   width: 20px!important;
   padding: 5px;
 }
-button:hover {
+.react-calendar__tile:hover {
   background: #60a5fa!important;
 }

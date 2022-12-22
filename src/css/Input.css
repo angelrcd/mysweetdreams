@@ -1,4 +1,4 @@
-input:not(:placeholder-shown) {
+.form:not(:placeholder-shown) {
   outline: 2px solid #f87171;
   outline-offset: 2px;
   background-image: url("/icons/incorrect.svg");
@@ -7,16 +7,16 @@ input:not(:placeholder-shown) {
   background-repeat: no-repeat;
 }
 
-input:not(:focus)[type="date"]{
+.form:not(:focus)[type="date"]{
   outline: 2px solid transparent;
   background-image: none;
 }
-input:not(:focus)[type="file"]{
+.form:not(:focus)[type="file"]{
   outline: 2px solid transparent;
   background-image: none;
 }
 
-input:required:valid {
+.form:required:valid {
   background-image: url("/icons/correct.svg");
   outline: 2px solid #79b5f3;
   background-size: 15px;
@@ -25,7 +25,7 @@ input:required:valid {
 }
 
 @media (prefers-color-scheme: dark) {
-  input[type="date"]::-webkit-calendar-picker-indicator { 
+  .form[type="date"]::-webkit-calendar-picker-indicator { 
     filter: invert(1);
   }
 }
