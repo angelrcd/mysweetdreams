@@ -73,7 +73,7 @@ export const data = {
       backgroundColor: 'rgba(255, 99, 132)'
     },
     {
-      label: 'Numero de veces despertado',
+      label: 'Número de veces despertado',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 2 })),
       backgroundColor: 'rgba(53, 162, 235)'
     }

@@ -26,32 +26,32 @@ ChartJS.register(
   BarController
 )
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July']
+const labels = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
 
 export const data = {
   labels,
   datasets: [
     {
       type: 'line',
-      label: 'Dataset 1',
+      label: 'calidad del sueño',
       borderColor: 'rgb(255, 99, 132)',
       borderWidth: 2,
       fill: false,
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 }))
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 10 }))
     },
     {
       type: 'bar',
-      label: 'Dataset 2',
+      label: 'Horas dormidas',
       backgroundColor: 'rgb(75, 192, 192)',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 12 })),
       borderColor: 'white',
       borderWidth: 2
     },
     {
       type: 'bar',
-      label: 'Dataset 3',
+      label: 'Número de veces despertado',
       backgroundColor: 'rgb(53, 162, 235)',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 }))
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 5 }))
     }
   ]
 }
