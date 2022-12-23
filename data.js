@@ -41,6 +41,6 @@ export const API = {
 
 export const SOCIAL = {
   FACEBOOK: 'https://www.facebook.com/profile.php?id=100088317490253',
-  TWITTER: 'https://twitter.com/mySweetDreamsAp',
+  TWITTER: 'https://twitter.com/AppSweetDreams',
   INSTAGRAM: 'https://www.instagram.com/mysweetdreamsapp/'
 }
