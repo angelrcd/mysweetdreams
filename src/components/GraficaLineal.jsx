@@ -58,7 +58,7 @@ export const options = {
       }
     },
     title: {
-      display: true,
+      display: false,
       text: 'Chart.js Line Chart'
     }
   }
