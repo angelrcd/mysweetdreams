@@ -55,10 +55,46 @@ export const data = {
     }
   ]
 }
+export const options = {
+  plugins: {
+    legend: {
+      position: 'top',
+      labels: {
+        color: 'white'
+      }
+    }
+  },
+  scales: {
+    x: {
+      grid: {
+        tickColor: '#999999',
+        color: '#999999'
+      },
+      ticks: {
+        color: 'white'
+      },
+      border: {
+        color: '#999999'
+      }
+    },
+    y: {
+      grid: {
+        tickColor: '#999999',
+        color: '#999999'
+      },
+      ticks: {
+        color: 'white'
+      },
+      border: {
+        color: '#999999'
+      }
+    }
+  }
+}
 
 function GraficaTest () {
   return (
-        <Chart type='bar' data={data} />
+        <Chart type='bar' data={data} options={options} />
   )
 }
 
